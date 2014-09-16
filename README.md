@@ -1,4 +1,4 @@
-timgeorge.com
+timrgeorge.com
 =============
 
 Personal Site
