@@ -1,0 +1,721 @@
+/*
+  HTML5 Reset :: style.css
+  ----------------------------------------------------------
+  We have learned much from/been inspired by/taken code where offered from:
+  
+  Eric Meyer          :: http://meyerweb.com
+  HTML5 Doctor        :: http://html5doctor.com
+  and the HTML5 Boilerplate :: http://html5boilerplate.com
+  
+-------------------------------------------------------------------------------*/
+
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+article, aside, figure, footer, header, nav, section, details, summary {display: block;}
+
+/* Handle box-sizing while better addressing child elements: 
+   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+  box-sizing: border-box;
+}
+
+*, 
+*:before, 
+*:after {
+  box-sizing: inherit;
+}
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+   If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
+img,
+object,
+embed {max-width: 100%;}
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow-y: scroll;}
+
+/* we use a lot of ULs that aren't bulleted. 
+  don't forget to restore the bullets within content. */
+ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {content: ''; content: none;}
+
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+
+input, select {vertical-align: middle;}
+
+pre {
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE */
+}
+
+input[type="radio"] {vertical-align: text-bottom;}
+input[type="checkbox"] {vertical-align: bottom;}
+.ie7 input[type="checkbox"] {vertical-align: baseline;}
+.ie6 input {vertical-align: text-bottom;}
+
+select, input, textarea {font: 99% sans-serif;}
+
+table {font-size: inherit; font: 100%;}
+
+small {font-size: 85%;}
+
+strong {font-weight: bold;}
+
+td, td img {vertical-align: top;} 
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+
+/* hand cursor on clickable elements */
+.clickable,
+label, 
+input[type=button], 
+input[type=submit], 
+input[type=file], 
+button {cursor: pointer;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+
+/* make buttons play nice in IE */
+button,
+input[type=button] {width: auto; overflow: visible;}
+ 
+/* scale images in IE7 more attractively */
+.ie7 img {-ms-interpolation-mode: bicubic;}
+
+/* prevent BG image flicker upon hover 
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+
+/* let's clear some floats */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
+.clearfix:after { clear: both; }  
+.clearfix { zoom: 1; }  
+
+
+/* Variables
+-------------------------------------------------------------------------------*/
+$highlight-color: #1695A3;
+$highlight-alt: #EB7F00;
+$border-color: #bbb;
+
+
+/* Mixins
+-------------------------------------------------------------------------------*/
+@mixin transition($transition, $length, $timing) {
+  -moz-transition:$transition $length $timing;
+  -o-transition:$transition $length $timing;
+  -webkit-transition:$transition $length $timing;
+  transition:$transition $length $timing;
+}
+
+@mixin gradient($top,$bottom) {
+  background: $bottom;
+  background: -moz-linear-gradient(top,  $top 0%, $bottom 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom));
+  background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%);
+  background: -o-linear-gradient(top,  $top 0%,$bottom 100%);
+  background: -ms-linear-gradient(top,  $top 0%,$bottom 100%);
+  background: linear-gradient(to bottom,  $top 0%,$bottom 100%);
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin transform($transformation) {
+  -ms-transform: $transformation;
+  -webkit-transform: $transformation;
+  -o-transition: $transformation;
+  transform: $transformation;
+}
+
+
+/* A Linux- and Windows-friendly sans-serif font stack: http://prospects.mhurrell.co.uk/post/updating-the-helvetica-font-stack */
+body {
+  font: 20px 'Titillium Web', Helmet, Freesans, sans-serif;
+}
+
+/* Using local fonts? Check out Font Squirrel's webfont generator: http://www.fontsquirrel.com/tools/webfont-generator */
+
+/* We like off-black for text. */
+body, select, input, textarea {color: #555;}
+
+a {color: $highlight-color;}
+a:hover {color: $highlight-alt;}
+
+/* Custom text-selection colors (remove any text shadows: http://twitter.com/miketaylr/status/12228805301) */
+/*::-moz-selection{background: #fcd700; color: #fff; text-shadow: none;}
+::selection {background: #fcd700; color: #fff; text-shadow: none;} */
+
+/*	j.mp/webkit-tap-highlight-color */
+a:link {-webkit-tap-highlight-color: #fcd700;} 
+
+ins {background-color: #fcd700; color: #000; text-decoration: none;}
+mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: bold;}
+
+/* Mozilla dosen't style place holders by default */
+input:-moz-placeholder { color:#a9a9a9; }
+textarea:-moz-placeholder { color:#a9a9a9; }
+
+body {
+  background: #dadada url(../img/greyzz.png);
+  border-top: 5px solid #333;
+  padding: 30px 0;
+}
+
+  body.lazer {
+    background: url(../img/lazer_bg.jpg);
+    background-size: cover; 
+  }
+
+.wrapper,
+.main-nav {
+  margin: 0 auto;
+  width: 980px;
+  @include transition(all,0.2s,ease);
+}
+
+h1 {
+  font-size: 100px;
+  font-weight: bold;
+  line-height: 100px;
+  margin: 0 0 20px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: -2px;
+  line-height: 30px;
+  margin: 0 0 20px;
+}
+
+h3 {
+  font-size: 25px;
+  color: #777;
+}
+
+p {
+  line-height: 130%;
+  padding: 0 0 20px;
+}
+
+  .main-nav {
+
+    border-bottom: 1px dotted $border-color;
+    margin: 0 auto 30px;
+
+    .mobile-menu-btn { display: none; }
+
+    ul {
+      height: 35px;
+      width: 400px;
+      margin: 0 auto 30px;
+    }
+
+    li { 
+      float: left;
+      margin: 0 0 0 20px;
+    }
+
+    li:first-child {
+      margin: 0;
+    }
+
+    li:after {
+      content: " /";
+      color: #000;
+      display: inline-block;
+      float: right;
+      font-size: 20px;
+      text-align: center;
+      width: 10px;
+    }
+
+    li:last-child:after {
+      content: "";
+    }
+
+    li a { 
+      color: $highlight-color;
+      display: block;
+      float: left;
+      font-size: 20px;
+      margin: 0 20px 0 0;
+      text-align: center;
+      text-decoration: none;
+      @include transition(all,0.2s,ease);
+      width: 60px;
+    }
+
+    li:last-child a { margin: 0; }
+
+    li a:hover {    
+      color: $highlight-alt;
+      text-decoration: underline;
+    }
+
+    li a.active { color: $highlight-alt; }
+  }
+
+
+header { 
+  padding: 0 0 30px;
+  border-bottom: 1px dotted $border-color;
+}
+
+
+  .main-title,
+  .sub-title { 
+    color: #666;
+    display: block;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    margin: 25px 0 0;
+    @include transition(all,0.5s,ease);
+    width: 70%;
+
+    h1 { 
+      letter-spacing: -4px;
+      margin: 0 0 20px;
+      text-shadow: 0 -1px 0 #444;
+    }
+    
+    h2 { 
+      color: #000;
+      margin: 0 0 20px;
+      text-transform: uppercase; 
+    }
+
+  }
+
+    .main-title:hover,
+    .sub-title:hover { color: #000; }
+
+  .sub-title { 
+    float: none;
+    width: auto;
+    margin: 0;
+
+    h1 { 
+      float: left;
+      font-size: 60px;
+      letter-spacing: -3px;
+      line-height: 60px;
+      margin: 0;
+    }
+
+    h2 { 
+      float: right;
+      font-size: 22px;
+      letter-spacing: -1.5px;
+      line-height: 22px;
+      margin: 10px 0 0;
+    }
+
+  }
+
+  .main-photo {
+    background: #fff url(../img/tg_photo.jpg) no-repeat top center;
+    background-size: cover; 
+    @include border-radius(300px);
+    float: right;
+    height: 275px;
+    margin: 3px 3% 0 0;
+    opacity: 0.90;
+    //text-indent: -9999px;
+    @include transition(all,0.5s,ease);
+    width: 27%;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 0px 10px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 0px 10px 0px rgba(50, 50, 50, 0.75);
+
+    /* .lazer-photo {
+      background: url(../img/lazer.jpg) no-repeat top center;
+      background-size: cover; 
+      @include border-radius(300px);
+      height: 275px;
+      opacity: 0;
+      @include transition(all,0.5s,ease);      
+    }
+
+      .lazer-photo:hover { opacity: 1; } */
+
+  }    
+
+  .intro {
+    padding: 0 10%;
+    margin: 0 0 10px;
+    text-align: center;
+  }
+
+.secondary {
+  display: none;
+}
+
+.content {
+  padding: 30px 0 0;
+
+  h2 { text-align: center; }
+
+}
+  
+  .work,
+  .about,
+  .blog {
+    border-bottom: 1px dotted $border-color;
+    padding-bottom: 20px;
+  }
+
+  .work {
+    
+    .work-item {
+      background: #eaeaea;
+      height: 200px;
+      float: left;
+      width: 32%;
+      margin: 0 2% 20px 0
+    }
+
+    .work-item:nth-child(3n+1) { margin: 0; }
+
+  }
+
+  .blog { margin: 0 0 10px; }
+
+footer {
+  padding: 20px 0;
+}
+
+.social {
+  width: 276px; /* 192 + 84 (14*6) */
+  margin: 0 auto;
+
+  li { 
+    float: left; 
+    margin: 0 7px;
+    @include border-radius(3px);
+    background: #777;
+    opacity: 0.5;
+    @include transition(all,0.3s,ease);
+  }
+
+  li:hover {
+    background: #333;
+    opacity: 1;
+  }
+
+  li a {
+    background: url(../img/icons.png) no-repeat top left;   
+    display: block;
+    float: left;
+    height: 32px;
+    text-indent: -9999px;
+    width: 32px;
+  }
+
+  .twitter { background-position: -160px 0; }
+  .github { background-position: -32px 0; }
+  .linkedin { background-position: -128px 0; }
+  .lastfm { background-position: -96px 0; }
+  .instagram { background-position: -64px 0; }
+
+}
+
+/* Media queries
+-------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 1050px) {
+	
+  h1 {
+    font-size: 80px;
+    line-height: 80px;
+  }
+
+  h2 {
+    font-size: 25px;
+    line-height: 25px;
+    letter-spacing: -1.5px;
+  }
+
+  .wrapper,
+  .main-nav { width: 95%; }
+
+  .main-title {
+    margin: 10px 0 0;
+    h2 { margin: 0 0 5px; }
+  }
+
+  .main-photo {
+    height: 200px;
+    width: 200px;
+    margin-right: 5%;
+
+    /*.lazer-photo { 
+      height: 200px;
+      width: 200px;
+    }*/
+  }
+		
+}
+
+
+@media screen and (max-width: 860px) {
+
+  .main-title {
+    float: none;
+    margin: 0;
+    width: auto;
+    h2 { margin: 0 0 10px; }
+    h3 { margin: 0 0 15px; }
+  }
+
+  .main-photo {
+    float: none;    
+    margin: 0 auto;
+  }
+
+}
+
+@media screen and (max-width: 730px) {
+
+  .sub-title { 
+    text-align: center;
+
+    h1, 
+    h2 { 
+      float: none;      
+    }
+
+  }
+
+  .work {
+    
+    .work-item {
+      width: 48%;
+      margin: 0 4% 20px 0;
+    }
+
+    .work-item:nth-child(2n+1) { margin-right: 0 !important; }
+    .work-item:nth-child(3n+1) { margin: 0 4% 20px 0; }
+
+  }
+
+
+}
+
+@media screen and (max-width: 520px) {
+
+  body { padding: 50px 0 40px; }
+
+  h1 {
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  .show-menu .main-nav ul,
+  .show-menu .wrapper {    
+    @include transform(translateX(110px));
+  }
+
+  .main-nav {
+
+    background: #444;
+    border: 0;
+    border-top: 5px solid #333;
+    height: 40px;
+    margin: 0 0 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+
+    ul { display: none; }
+    /*ul {
+      background: #333;
+      bottom: 0;
+      height: auto;
+      left: -110px;
+      margin: 0;
+      position: fixed;
+      top: 40px;
+      @include transition(all,0.2s,ease);
+      width: auto;      
+    }
+
+    li { 
+      float: none;
+      margin: 0;
+    }
+
+    li:first-child {
+      margin: 0;
+    }
+
+    li:after { 
+      content: "";
+    }
+
+    li a { 
+      color: #fff;
+      float: none;
+      font-weight: bold;
+      margin: 0;
+      padding: 10px 0 10px 15px;
+      text-align: left;
+      text-transform: uppercase;
+      width: 110px;
+    }
+
+      li a:hover { text-decoration: none; }
+
+    li:last-child a { margin: 0; } */
+
+    .mobile-menu-btn {
+      background: url(../img/icons.png) no-repeat -192px 0;
+      display: block;
+      height: 25px;
+      margin: 5px 0 0 5px;
+      text-indent: -9999px;
+      width: 25px;
+    }
+
+  }
+
+  .main-title { 
+    h2,
+    h3 { display: none; }
+  }
+
+  .social {
+    width: 138px;
+    li { margin-bottom: 14px; }
+  }
+
+  .work {
+    
+    .work-item {
+      width: 100%;
+      margin: 0 0 15px 0;
+    }
+
+    .work-item:nth-child(2n+1) { margin-right: 0; }
+    .work-item:nth-child(3n+1) { margin: 0 0 15px 0; }
+  }
+
+}
+
+
+@media screen and (max-width: 460px) {
+
+  header { padding: 0 0 20px; }
+
+  .main-photo {
+    height: 150px;
+    width: 150px;
+
+    /*.lazer-photo { 
+      height: 150px;
+      width: 150px;
+    }*/
+  }
+
+  .sub-title { 
+    
+    h2 { display: none; }
+
+  }
+
+
+}
+
+
+@media screen and (max-width: 400px) {
+  /*.main-nav { display: none; }*/
+
+  /*.main-nav {
+
+    border-bottom:  0;
+
+    ul {
+      height: auto;
+      width: auto;
+      margin: 0;
+    }
+
+    li { 
+      float: none;
+      margin: 0;
+    }
+
+    li:first-child {
+      margin: 0;
+    }
+
+    li:after { content: ""; }
+
+    li a { 
+      float: none;
+      margin: 0;
+      text-align: left;
+      width: auto;
+    }
+
+    li:last-child a { margin: 0; }
+
+  }*/
+
+}
+
+
+/* Print styles
+-------------------------------------------------------------------------------*/
+@media print {
+
+
+
+}
