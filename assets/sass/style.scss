@@ -252,7 +252,8 @@ p {
 
     ul {
       height: 35px;
-      width: 400px;
+      /*width: 400px;*/
+      width: 290px;
       margin: 0 auto 30px;
     }
 
@@ -393,9 +394,9 @@ header {
     text-align: center;
   }
 
-.secondary {
+/*.secondary {
   display: none;
-}
+}*/
 
 .content {
   padding: 30px 0 0;
@@ -415,12 +416,29 @@ header {
     
     .work-item {
       background: #eaeaea;
-      height: 200px;
+      border: 1px solid #ccc;
       float: left;
+      height: 200px;
+      margin: 0 2% 20px 0;
+      opacity: 0.5;
+      @include transition(all,0.3s,ease);
       width: 32%;
-      margin: 0 2% 20px 0
+
+      a {
+        display: block;
+        height: 200px;
+        text-indent: -9999px;
+      }
+
     }
 
+    .work-item.walter { background: url(../img/work_walter.jpg) no-repeat top center; }
+    .work-item.slipslide { background: url(../img/work_slipslide.jpg) no-repeat top center; }
+
+    .work-item:hover { 
+      border-color: #999;
+      opacity: 1; 
+    }
     .work-item:nth-child(3n+1) { margin: 0; }
 
   }
@@ -493,7 +511,9 @@ footer {
   .main-photo {
     height: 200px;
     width: 200px;
-    margin-right: 5%;
+    /*margin-right: 5%;*/
+    position: absolute;
+    right: 9%;
 
     /*.lazer-photo { 
       height: 200px;
@@ -517,6 +537,7 @@ footer {
   .main-photo {
     float: none;    
     margin: 0 auto;
+    position: static;
   }
 
 }

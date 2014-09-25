@@ -25,8 +25,8 @@
 
       <h2>Work</h2>
 
-      <div class="work-item"></div>
-      <div class="work-item"></div>
+      <div class="work-item walter"><a href="/">Walter A. Furman Co.</a></div>
+      <div class="work-item slipslide"><a href="/">Slip &amp; Slide Kegger</a></div>
       <div class="work-item"></div>
       <div class="work-item"></div>
       <div class="work-item"></div>
@@ -42,7 +42,7 @@
 
     </section>
 
-    <section class="blog content clearfix">
+    <?php /*<section class="blog content clearfix">
 
       <h2>Blog</h2>
 
@@ -52,6 +52,6 @@
 
       <p>Phasellus vitae massa ut tortor maximus tincidunt. Suspendisse lacinia sapien eros, interdum facilisis felis faucibus nec. Aliquam eros quam, venenatis nec mi at, laoreet aliquam eros. Etiam tempor sapien at mi placerat scelerisque. Maecenas eros tellus, iaculis ut euismod nec, dapibus ac ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vel posuere lacus. Curabitur ultricies, nisi et interdum sodales, risus urna ornare nulla, et suscipit tortor mauris quis arcu. Donec eget vulputate felis. Quisque ante est, molestie in ligula scelerisque, ultrices tempor lacus.</p>
 
-    </section>
+    </section>*/ ?>
 
 <?php include($_SERVER['DOCUMENT_ROOT'].'/inc/footer.php'); ?>

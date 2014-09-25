@@ -39,7 +39,7 @@
       <li><a href="index">Home</a></li>
       <li><a href="work">Work</a></li>
       <li><a href="about">About</a></li>
-      <li><a href="blog">Blog</a></li>
+      <?php //<li><a href="blog">Blog</a></li> ?>
     </ul>
   </nav>
 
@@ -53,12 +53,11 @@
           <h3><?php get_slogan(); ?></h3>
         </a>
 
-        <div class="main-photo">
-          <!-- <div class="lazer-photo"></div> -->
-        </div>
+        <div class="main-photo"><?php //<!-- <div class="lazer-photo"></div> --> ?></div>
 
     </header>
 
+    <?php /*
     <header class="secondary clearfix">
 
       <a class="sub-title" href="/">
@@ -66,4 +65,4 @@
         <h2>User Interface Designer.&nbsp;&nbsp;Web Developer.<br />80's Enthusiast.&nbsp;&nbsp;Lego-Builder.</h2>
       </a>    
 
-    </header>
+    </header> */ ?>
