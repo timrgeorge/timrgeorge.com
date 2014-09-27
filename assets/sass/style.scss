@@ -203,7 +203,7 @@ textarea:-moz-placeholder { color:#a9a9a9; }
 body {
   background: #dadada url(../img/greyzz.png);
   border-top: 5px solid #333;
-  padding: 30px 0;
+  padding: 111px 0;
 }
 
   body.lazer {
@@ -242,19 +242,35 @@ p {
   line-height: 130%;
   padding: 0 0 20px;
 }
+  
+  .nav-wrapper {
+    background: #dadada url(../img/greyzz.png);
+    padding: 15px 0 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+  }
 
   .main-nav {
 
     border-bottom: 1px dotted $border-color;
-    margin: 0 auto 30px;
+    margin: 0 auto;
 
     .mobile-menu-btn { display: none; }
 
+    h2 {
+      float: left;
+      margin: 8px 0 0;
+    }
+
     ul {
+      float: right;
       height: 35px;
       /*width: 400px;*/
       width: 290px;
-      margin: 0 auto 30px;
+      //margin: 0 auto 30px;
+      margin: 10px 0 20px;      
     }
 
     li { 
@@ -321,7 +337,9 @@ header {
     width: 70%;
 
     h1 { 
+      font-size: 75px;
       letter-spacing: -4px;
+      line-height: 75px;
       margin: 0 0 20px;
       text-shadow: 0 -1px 0 #444;
     }
@@ -503,6 +521,10 @@ footer {
   .wrapper,
   .main-nav { width: 95%; }
 
+  .main-nav {
+    h2 { margin: 14px 0 0; }
+  }
+
   .main-title {
     margin: 10px 0 0;
     h2 { margin: 0 0 5px; }
@@ -594,6 +616,8 @@ footer {
     top: 0;
     width: 100%;
     z-index: 9999;
+
+    h2 { display: none; }
 
     ul { display: none; }
     /*ul {

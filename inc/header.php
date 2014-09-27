@@ -32,24 +32,27 @@
 </head>
 
 <body>
-
-  <nav class="main-nav clearfix">
-    <a class="mobile-menu-btn" href="hamburger">Menu Icon</a>
-    <ul>
-      <li><a href="index">Home</a></li>
-      <li><a href="work">Work</a></li>
-      <li><a href="about">About</a></li>
-      <?php //<li><a href="blog">Blog</a></li> ?>
-    </ul>
-  </nav>
+  
+  <div class="nav-wrapper">
+    <nav class="main-nav clearfix">
+      <h2>Tim George</h2>
+      <a class="mobile-menu-btn" href="hamburger">Menu Icon</a>
+      <ul>
+        <li><a href="index">Home</a></li>
+        <li><a href="work">Work</a></li>
+        <li><a href="about">About</a></li>
+        <?php //<li><a href="blog">Blog</a></li> ?>
+      </ul>
+    </nav>
+  </div>
 
   <div class="wrapper">
     
     <header class="primary clearfix">
     
         <a class="main-title" href="/">
-          <h1>Tim George</h1>
-          <h2>User Interface Designer.&nbsp;&nbsp;Web Developer.<br />80's Enthusiast.&nbsp;&nbsp;Lego-Builder.</h2>
+          <h1>Hi Friend</h1>
+          <h2>I'm Tim George<br />User Interface Designer.&nbsp;&nbsp;Web Developer.<br />80's Enthusiast.&nbsp;&nbsp;Lego-Builder.</h2>
           <h3><?php get_slogan(); ?></h3>
         </a>
 
