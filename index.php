@@ -3,7 +3,7 @@
     <section class="index content clearfix">
 
       <div class="intro">
-        <p>I'm a Boston-based User Interface Designer and Web Developer. I am currently employed as the Managing UI/UX Architect at <a href="http://bostonfinancial.com">Boston Financial Data Services</a>.</p>
+        <p>I'm<span class="mobile-hidden"> Tim George,</span> a Boston-based User Interface Designer and Web Developer. I am currently employed as the Managing UI/UX Architect at <a href="http://bostonfinancial.com">Boston Financial Data Services</a>.</p>
       </div>
 
     </section>

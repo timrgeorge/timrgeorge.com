@@ -242,10 +242,12 @@ p {
   line-height: 130%;
   padding: 0 0 20px;
 }
+
+.mobile-hidden { display: none; }
   
   .nav-wrapper {
     background: #dadada url(../img/greyzz.png);
-    padding: 15px 0 0;
+    padding: 15px 0 20px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -262,7 +264,10 @@ p {
     h2 {
       float: left;
       margin: 8px 0 0;
+      @include transition(all,0.2s,ease);
     }
+
+      h2:hover { color: $highlight-alt; }
 
     ul {
       float: right;
@@ -334,7 +339,7 @@ header {
     text-decoration: none;
     margin: 25px 0 0;
     @include transition(all,0.5s,ease);
-    width: 70%;
+    width: 65%;
 
     h1 { 
       font-size: 75px;
@@ -384,7 +389,7 @@ header {
     @include border-radius(300px);
     float: right;
     height: 275px;
-    margin: 3px 3% 0 0;
+    margin: 3px 8% 0 0;
     opacity: 0.90;
     //text-indent: -9999px;
     @include transition(all,0.5s,ease);
@@ -426,7 +431,7 @@ header {
   .work,
   .about,
   .blog {
-    border-bottom: 1px dotted $border-color;
+    /*border-bottom: 1px dotted $border-color;*/
     padding-bottom: 20px;
   }
 
@@ -464,7 +469,11 @@ header {
   .blog { margin: 0 0 10px; }
 
 footer {
-  padding: 20px 0;
+  padding: 30px 0;
+}
+
+footer.bottom {
+  border-top: 1px dotted $border-color;
 }
 
 .social {
@@ -535,13 +544,16 @@ footer {
     width: 200px;
     /*margin-right: 5%;*/
     position: absolute;
-    right: 9%;
+    right: 6%;
 
     /*.lazer-photo { 
       height: 200px;
       width: 200px;
     }*/
   }
+
+  footer { padding: 20px 0; }
+  footer.bottom { padding: 30px 0; }
 		
 }
 
@@ -604,6 +616,8 @@ footer {
   .show-menu .wrapper {    
     @include transform(translateX(110px));
   }
+
+  .mobile-hidden { display: inline; }
 
   .main-nav {
 

@@ -35,7 +35,7 @@
   
   <div class="nav-wrapper">
     <nav class="main-nav clearfix">
-      <h2>Tim George</h2>
+      <a href="/"><h2>Tim George</h2></a>
       <a class="mobile-menu-btn" href="hamburger">Menu Icon</a>
       <ul>
         <li><a href="index">Home</a></li>
@@ -51,8 +51,8 @@
     <header class="primary clearfix">
     
         <a class="main-title" href="/">
-          <h1>Hi Friend</h1>
-          <h2>I'm Tim George<br />User Interface Designer.&nbsp;&nbsp;Web Developer.<br />80's Enthusiast.&nbsp;&nbsp;Lego-Builder.</h2>
+          <h1>Hi Friends</h1>
+          <h2>I'm Tim George<br />User Interface&nbsp;&nbsp;&amp;&nbsp;&nbsp;Web Developer.<br />80's Enthusiast.&nbsp;&nbsp;Lego-Builder.</h2>
           <h3><?php get_slogan(); ?></h3>
         </a>
 

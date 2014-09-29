@@ -1,4 +1,4 @@
-    <footer class="clearfix">
+    <footer class="bottom clearfix">
 
       <ul class="social">
         <li><a class="twitter" title="Twitter" href="https://twitter.com/timrgeorge">twitter</a></li>
