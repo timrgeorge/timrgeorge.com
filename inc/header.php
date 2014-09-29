@@ -9,63 +9,53 @@
 
 <head>
 
-  <meta charset="utf-8">
+<meta charset="utf-8">
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Tim George - UI/UX &amp; Web Developer</title>
-  <meta name="author" content="Tim George" />
-  <meta name="description" content="Tim often enjoys coding to Stan Bush's 'The Touch'." />
+<title>Tim George - UI/UX &amp; Web Developer</title>
+<meta name="author" content="Tim George" />
+<meta name="description" content="Tim often enjoys coding to Stan Bush's 'The Touch'." />
 
-  <meta name="google-site-verification" content="" />
+<meta name="google-site-verification" content="" />
 
-  <meta name="Copyright" content="<?php echo date('Y')?> - Tim George" />
+<meta name="Copyright" content="<?php echo date('Y')?> - Tim George" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="shortcut icon" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/assets/img/favicon.ico" />
-  <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/assets/css/style.css" />
+<link rel="shortcut icon" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/assets/img/favicon.ico" />
+<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/assets/css/style.css" />
 
-  <script src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/assets/js/libs/modernizr-2.8.3.min.js"></script>
+<script src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/assets/js/libs/modernizr-2.8.3.min.js"></script>
 
 </head>
 
 <body>
-  
-  <div class="nav-wrapper">
-    <nav class="main-nav clearfix">
-      <a href="/"><h2>Tim George</h2></a>
-      <a class="mobile-menu-btn" href="hamburger">Menu Icon</a>
-      <ul>
-        <li><a href="index">Home</a></li>
-        <li><a href="work">Work</a></li>
-        <li><a href="about">About</a></li>
-        <?php //<li><a href="blog">Blog</a></li> ?>
-      </ul>
-    </nav>
-  </div>
 
-  <div class="wrapper">
-    
-    <header class="primary clearfix">
-    
-        <a class="main-title" href="/">
-          <h1>Hi Friends</h1>
-          <h2>I'm Tim George<br />User Interface&nbsp;&nbsp;&amp;&nbsp;&nbsp;Web Developer.<br />80's Enthusiast.&nbsp;&nbsp;Lego-Builder.</h2>
-          <h3><?php get_slogan(); ?></h3>
-        </a>
+<div class="nav-wrapper">
+<nav class="main-nav clearfix">
+<a href="/"><h2>Tim George</h2></a>
+<a class="mobile-menu-btn" href="hamburger">Menu Icon</a>
+<ul>
+<li><a href="index">Home</a></li>
+<li><a href="work">Work</a></li>
+<li><a href="about">About</a></li>
+</ul>
+</nav>
+</div>
 
-        <div class="main-photo"><?php //<!-- <div class="lazer-photo"></div> --> ?></div>
+<div class="wrapper">
 
-    </header>
+<header class="clearfix">
 
-    <?php /*
-    <header class="secondary clearfix">
+<a class="main-title" href="/">
+<h1>Hi Friends</h1>
+<h2>I'm Tim George<br />User Interface&nbsp;&nbsp;&amp;&nbsp;&nbsp;Web Developer.<br />80's Enthusiast.&nbsp;&nbsp;Lego-Builder.</h2>
+<h3><?php get_slogan(); ?></h3>
+</a>
 
-      <a class="sub-title" href="/">
-        <h1>Tim George</h1>
-        <h2>User Interface Designer.&nbsp;&nbsp;Web Developer.<br />80's Enthusiast.&nbsp;&nbsp;Lego-Builder.</h2>
-      </a>    
+<div class="main-photo">Yes, it's a photo of me.</div>
 
-    </header> */ ?>
+</header>
+

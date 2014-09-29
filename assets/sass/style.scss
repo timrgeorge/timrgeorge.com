@@ -391,7 +391,7 @@ header {
     height: 275px;
     margin: 3px 8% 0 0;
     opacity: 0.90;
-    //text-indent: -9999px;
+    text-indent: -9999px;
     @include transition(all,0.5s,ease);
     width: 27%;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
