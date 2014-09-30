@@ -1,5 +1,6 @@
 <footer class="bottom clearfix">
 <?php include($_SERVER['DOCUMENT_ROOT'].'/inc/social.php'); ?>
+
 </footer>
 
 </div>

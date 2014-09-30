@@ -8,15 +8,13 @@
 
 <footer class="clearfix">
 <?php include($_SERVER['DOCUMENT_ROOT'].'/inc/social.php'); ?>
+
 </footer>
 
 <section id="work" class="work content clearfix">
 <h2>Work</h2>
 <div class="work-item walter"><a href="/">Walter A. Furman Co.</a></div>
 <div class="work-item slipslide"><a href="/">Slip &amp; Slide Kegger</a></div>
-<div class="work-item"></div>
-<div class="work-item"></div>
-<div class="work-item"></div>
 <div class="work-item"></div>
 </section>
 

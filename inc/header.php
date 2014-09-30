@@ -7,6 +7,15 @@
 <!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
+<!-- -------------------------------------------------------------- -->
+<!-- Hey, thanks for checking out my source code and seeing what    -->
+<!-- I'm all about. If you like what I see, please feel free to     -->
+<!-- get it touch with me at: tim@timrgeorge.com                    -->
+<!--                                                                -->
+<!-- Thanks for coming by!                                          -->
+<!-- For your pleasure: https://www.youtube.com/watch?v=pDxn0Xfqkgw -->
+<!-- -------------------------------------------------------------- -->
+
 <head>
 
 <meta charset="utf-8">
@@ -48,14 +57,18 @@
 <div class="wrapper">
 
 <header class="clearfix">
-
 <a class="main-title" href="/">
 <h1>Hi Friends</h1>
 <h2>I'm Tim George<br />User Interface&nbsp;&nbsp;&amp;&nbsp;&nbsp;Web Developer.<br />80's Enthusiast.&nbsp;&nbsp;Lego-Builder.</h2>
 <h3><?php get_slogan(); ?></h3>
 </a>
 
-<div class="main-photo">Yes, it's a photo of me.</div>
+<div class="main-photo">
+<!-- -------------------------------------------------------------- -->
+<!-- Yes, it's a photo of me, and when you hover over it            -->
+<!-- you are treated to an amazing animated gif. ENJOY YOUR REWARD. -->
+<!-- -------------------------------------------------------------- -->
+<?php get_hover_photo(); ?>
 
+</div>
 </header>
-

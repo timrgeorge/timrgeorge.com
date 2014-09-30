@@ -1,12 +1,22 @@
-/*
-  HTML5 Reset :: style.css
-  ----------------------------------------------------------
-  We have learned much from/been inspired by/taken code where offered from:
-  
-  Eric Meyer          :: http://meyerweb.com
-  HTML5 Doctor        :: http://html5doctor.com
-  and the HTML5 Boilerplate :: http://html5boilerplate.com
-  
+/**
+ * timrgeorge.com
+ * 
+ * Author:    Tim George
+ * Version:   1.0
+ *
+ * Tiled Background Image:    http://subtlepatterns.com/
+ * Google Fonts:              https://www.google.com/fonts/specimen/Titillium+Web
+ * Animated gifs found via:   http://giphy.com/
+ * Initial Templates:         https://github.com/murtaugh/HTML5-Reset
+ *
+ *
+ * HTML5 Reset :: style.css
+ * ----------------------------------------------------------  
+ * We have learned much from/been inspired by/taken code where offered from:
+ *
+ * Eric Meyer          :: http://meyerweb.com
+ * HTML5 Doctor        :: http://html5doctor.com
+ * and the HTML5 Boilerplate :: http://html5boilerplate.com  
 -------------------------------------------------------------------------------*/
 
 /* Let's default this puppy out
@@ -24,11 +34,7 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 
 article, aside, figure, footer, header, nav, section, details, summary {display: block;}
 
-/* Handle box-sizing while better addressing child elements: 
-   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-html {
-  box-sizing: border-box;
-}
+html { box-sizing: border-box; }
 
 *, 
 *:before, 
@@ -36,11 +42,6 @@ html {
   box-sizing: inherit;
 }
 
-/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
-
-/* Responsive images and other embedded objects
-   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
-   If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
 img,
 object,
 embed {max-width: 100%;}
@@ -173,22 +174,11 @@ $border-color: #bbb;
 }
 
 
-/* A Linux- and Windows-friendly sans-serif font stack: http://prospects.mhurrell.co.uk/post/updating-the-helvetica-font-stack */
-body {
-  font: 20px 'Titillium Web', Helmet, Freesans, sans-serif;
-}
-
-/* Using local fonts? Check out Font Squirrel's webfont generator: http://www.fontsquirrel.com/tools/webfont-generator */
-
-/* We like off-black for text. */
-body, select, input, textarea {color: #555;}
+body { font: 20px 'Titillium Web', Helmet, Freesans, sans-serif; }
+body, select, input, textarea { color: #333; }
 
 a {color: $highlight-color;}
 a:hover {color: $highlight-alt;}
-
-/* Custom text-selection colors (remove any text shadows: http://twitter.com/miketaylr/status/12228805301) */
-/*::-moz-selection{background: #fcd700; color: #fff; text-shadow: none;}
-::selection {background: #fcd700; color: #fff; text-shadow: none;} */
 
 /*	j.mp/webkit-tap-highlight-color */
 a:link {-webkit-tap-highlight-color: #fcd700;} 
@@ -200,16 +190,15 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
 input:-moz-placeholder { color:#a9a9a9; }
 textarea:-moz-placeholder { color:#a9a9a9; }
 
+
+/* Global styles
+-------------------------------------------------------------------------------*/
+
 body {
   background: #dadada url(../img/greyzz.png);
   border-top: 5px solid #333;
   padding: 111px 0;
 }
-
-  body.lazer {
-    background: url(../img/lazer_bg.jpg);
-    background-size: cover; 
-  }
 
 .wrapper,
 .main-nav {
@@ -242,6 +231,10 @@ p {
   line-height: 130%;
   padding: 0 0 20px;
 }
+
+
+/* Main navigation
+-------------------------------------------------------------------------------*/
 
 .mobile-hidden { display: none; }
   
@@ -324,11 +317,13 @@ p {
   }
 
 
+/* Header elements - Main title, sub-title, hero photo
+-------------------------------------------------------------------------------*/
+
 header { 
   padding: 0 0 30px;
   border-bottom: 1px dotted $border-color;
 }
-
 
   .main-title,
   .sub-title { 
@@ -391,23 +386,34 @@ header {
     height: 275px;
     margin: 3px 8% 0 0;
     opacity: 0.90;
-    text-indent: -9999px;
+    overflow: hidden;
+    position: relative;
     @include transition(all,0.5s,ease);
     width: 27%;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    0px 0px 10px 0px rgba(50, 50, 50, 0.75);
     box-shadow:         0px 0px 10px 0px rgba(50, 50, 50, 0.75);
 
-    /* .lazer-photo {
-      background: url(../img/lazer.jpg) no-repeat top center;
+    .knight-rider { background: url(../img/gif/knight_rider.gif) no-repeat top center; }
+    .mr-t { background: url(../img/gif/mr_t_shark_punch.gif) no-repeat top center; }
+    .bttf { background: url(../img/gif/bttf_1.gif) no-repeat top center; }
+    
+    .terminator-2 { background: url(../img/gif/terminator_2.gif) no-repeat -113px top; }
+    .ghostbusters { background: url(../img/gif/ghostbusters.gif) no-repeat -116px top; }
+
+    .hover-photo {
       background-size: cover; 
       @include border-radius(300px);
       height: 275px;
       opacity: 0;
-      @include transition(all,0.5s,ease);      
+      text-indent: -9999px;
+      @include transition(all,0.75s,ease);
     }
 
-      .lazer-photo:hover { opacity: 1; } */
+    .hover-photo:hover { 
+      cursor: none;
+      opacity: 1; 
+    }
 
   }    
 
@@ -417,21 +423,19 @@ header {
     text-align: center;
   }
 
-/*.secondary {
-  display: none;
-}*/
+
+/* Content styles
+-------------------------------------------------------------------------------*/
 
 .content {
   padding: 30px 0 0;
-
   h2 { text-align: center; }
-
 }
   
   .work,
   .about,
   .blog {
-    /*border-bottom: 1px dotted $border-color;*/
+    //border-bottom: 1px dotted $border-color;
     padding-bottom: 20px;
   }
 
@@ -467,6 +471,10 @@ header {
   }
 
   .blog { margin: 0 0 10px; }
+
+
+/* Footer Styles
+-------------------------------------------------------------------------------*/
 
 footer {
   padding: 30px 0;
@@ -542,14 +550,14 @@ footer.bottom {
   .main-photo {
     height: 200px;
     width: 200px;
-    /*margin-right: 5%;*/
     position: absolute;
     right: 6%;
 
-    /*.lazer-photo { 
-      height: 200px;
-      width: 200px;
-    }*/
+    .hover-photo { height: 200px; }
+
+    .ghostbusters { background-position: -80px top; }
+    .terminator-2 { background-position: -85px top; }
+
   }
 
   footer { padding: 20px 0; }
@@ -721,6 +729,11 @@ footer.bottom {
       height: 150px;
       width: 150px;
     }*/
+
+    .hover-photo { height: 150px; }
+
+    .ghostbusters { background-position: -60px top; }
+    .terminator-2 { background-position: -65px top; }
   }
 
   .sub-title { 
@@ -767,14 +780,5 @@ footer.bottom {
     li:last-child a { margin: 0; }
 
   }*/
-
-}
-
-
-/* Print styles
--------------------------------------------------------------------------------*/
-@media print {
-
-
 
 }
