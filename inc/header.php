@@ -7,14 +7,17 @@
 <!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
-<!-- -------------------------------------------------------------- -->
+<!-- ************************************************************** -->
 <!-- Hey, thanks for checking out my source code and seeing what    -->
-<!-- I'm all about. If you like what I see, please feel free to     -->
-<!-- get it touch with me at: tim@timrgeorge.com                    -->
+<!-- I'm all about. If you like what you see, please feel free to   -->
+<!-- get in touch with me at: tim@timrgeorge.com                    -->
 <!--                                                                -->
-<!-- Thanks for coming by!                                          -->
-<!-- For your pleasure: https://www.youtube.com/watch?v=pDxn0Xfqkgw -->
-<!-- -------------------------------------------------------------- -->
+<!-- Thanks again for coming by!                                    -->
+<!-- For your efforts, please enjoy the following:                  -->
+<!-- https://www.youtube.com/watch?v=AZKpByV5764                    -->
+<!-- or                                                             -->
+<!-- https://www.youtube.com/watch?v=3Sso3h0xMJA                    -->
+<!-- ************************************************************** -->
 
 <head>
 
@@ -44,7 +47,7 @@
 
 <div class="nav-wrapper">
 <nav class="main-nav clearfix">
-<a href="/"><h2>Tim George</h2></a>
+<a href="index"><h2>Tim George</h2></a>
 <a class="mobile-menu-btn" href="hamburger">Menu Icon</a>
 <ul>
 <li><a href="index">Home</a></li>
@@ -56,7 +59,8 @@
 
 <div class="wrapper">
 
-<header class="clearfix">
+<header>
+<div class="clearfix">
 <a class="main-title" href="/">
 <h1>Hi Friends</h1>
 <h2>I'm Tim George<br />User Interface&nbsp;&nbsp;&amp;&nbsp;&nbsp;Web Developer.<br />80's Enthusiast.&nbsp;&nbsp;Lego-Builder.</h2>
@@ -64,11 +68,21 @@
 </a>
 
 <div class="main-photo">
-<!-- -------------------------------------------------------------- -->
+<!-- ************************************************************** -->
 <!-- Yes, it's a photo of me, and when you hover over it            -->
 <!-- you are treated to an amazing animated gif. ENJOY YOUR REWARD. -->
-<!-- -------------------------------------------------------------- -->
+<!-- ************************************************************** -->
 <?php get_hover_photo(); ?>
 
 </div>
+</div>
+
+<div class="intro">
+<p>I'm<span class="mobile-hidden"> Tim George,</span> a Boston-based User Interface &amp; Web Developer. I am currently employed as the Managing UI/UX Architect at <a href="http://bostonfinancial.com">Boston Financial Data Services</a>.</p>
+</div>
+
+<footer class="clearfix">
+<?php include($_SERVER['DOCUMENT_ROOT'].'/inc/social.php'); ?>
+
+</footer>
 </header>

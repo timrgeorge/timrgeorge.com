@@ -1,3 +1,9 @@
+<section id="music" class="music content clearfix">
+<h2>Currently Listening To</h2>
+<p><?php echo getLastFM(); ?></p>
+
+</section>
+
 <footer class="bottom clearfix">
 <?php include($_SERVER['DOCUMENT_ROOT'].'/inc/social.php'); ?>
 

@@ -19,18 +19,15 @@
 			//$("body").toggleClass("show-menu");
 		});
 
-		$(".main-nav ul li a").click(function(e){
+		$(".main-nav a").click(function(e){
 			e.preventDefault();
 			var theTarget = $(this).attr("href");
-			if(theTarget == "index") {
-				$('html, body').animate({
-	                scrollTop: "0px"
-	            }, 500);
+			if( !($(this).hasClass("mobile-menu-btn")) ) {
+				if(theTarget == "index") { 	$('html, body').animate({ scrollTop: "0px" }, 500); } 
+				else { $('html, body').animate({ scrollTop: $("#"+theTarget).offset().top-71 }, 500);}
 			} else {
-				$('html, body').animate({
-	                scrollTop: $("#"+theTarget).offset().top-71
-	            }, 500);
-	        }
+				console.log("hamburger");
+			}
 
 		});
 

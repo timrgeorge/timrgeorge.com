@@ -1,5 +1,20 @@
 <?php
-
+  
+  function getLastFM() {
+    $lastfmrequest = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&limit=1&user=timrgeorge&api_key=03fd6a5efdecd80ff180234e98bb2c59&format=json';
+    $lastfminput = file_get_contents($lastfmrequest);
+    $var = json_decode($lastfminput,true);
+    date_default_timezone_set('America/New_York');
+    if ($var['recenttracks']['track'][1]['url'] != "" ) { 
+      $txt = '<a href="http://' . $var['recenttracks']['track'][1]['url'] . '">' . $var['recenttracks']['track'][1]['artist']['#text'] . ' - ' . $var['recenttracks']['track'][1]['name'] . '</a><br />on ' . date('l, F jS \a\t g:i a',$var['recenttracks']['track'][1]['date']['uts']);  
+      // . $var[0]->artist . ' - ' . $var[0]->name; 
+    } else { 
+      $txt = '<a href="http://' . $var['recenttracks']['track']['url'] . '">' . $var['recenttracks']['track']['artist']['#text'] . ' - ' . $var['recenttracks']['track']['name'] . '</a><br />on ' . date('l, F jS \a\t g:i a',$var['recenttracks']['track']['date']['uts']); 
+      // . $var[0]->artist . ' - ' . $var[0]->name; 
+    }
+    return ($txt);
+  } 
+  
   function get_slogan() {       
     $num = rand() % (77 - 1 + 1) + 1;    
     switch($num) {
@@ -42,7 +57,7 @@
       case 36: echo "Listen... do you smell something?";break;
       case 37: echo "Go get her, Ray!";break;
       case 38: echo "Welcome to the party, pal.";break;
-      case 39: echo "Let's see you take *this* under advisement, jerkweed!";break;
+      case 39: echo "You macho assholes, no, no!";break;
       case 40: echo "Happy trails, Hans.";break;
       case 41: echo "Hey, sprechen ze talk?";break;
       case 42: echo "*Shoot* the glass!";break;
@@ -87,14 +102,18 @@
   }
 
   function get_hover_photo() {
-    $num = rand() % (5 - 1 + 1) + 1;    
+    $num = rand() % (9 - 1 + 1) + 1;    
     switch($num) {
-      case 1: echo '<div class="hover-photo knight-rider">One man can make a difference.<div>';break;
-      case 2: echo '<div class="hover-photo mr-t">I pity the shark!<div>';break;
-      case 3: echo '<div class="hover-photo bttf">We don\'t need roads.<div>';break;
-      case 4: echo '<div class="hover-photo terminator-2">I know now why you cry.<div>';break;
-      case 5: echo '<div class="hover-photo ghostbusters">Bustin\' makes me feel good.<div>';break;
-      default: echo '<div class="hover-photo knight-rider">One man can make a difference.<div>';break;
+      case 1: echo '<div class="hover-photo knight-rider">One man can make a difference.</div>';break;
+      case 2: echo '<div class="hover-photo mr-t">I pity the shark!</div>';break;
+      case 3: echo '<div class="hover-photo bttf">We don\'t need roads.</div>';break;
+      case 4: echo '<div class="hover-photo terminator-2">I know now why you cry.</div>';break;
+      case 5: echo '<div class="hover-photo ghostbusters">Bustin\' makes me feel good.</div>';break;
+      case 6: echo '<div class="hover-photo predator">Dylan! You son of a bitch.</div>';break;
+      case 7: echo '<div class="hover-photo top-gun">I feel the need. The need, for speed.</div>';break;
+      case 8: echo '<div class="hover-photo indiana-jones">Give me the whip!</div>';break;
+      case 9: echo '<div class="hover-photo die-hard">Let\'s see you take *this* under advisement, jerkweed!</div>';break;
+      default: echo '<div class="hover-photo knight-rider">One man can make a difference.</div>';break;
     }
   }
 

@@ -196,7 +196,6 @@ textarea:-moz-placeholder { color:#a9a9a9; }
 
 body {
   background: #dadada url(../img/greyzz.png);
-  border-top: 5px solid #333;
   padding: 111px 0;
 }
 
@@ -240,9 +239,10 @@ p {
   
   .nav-wrapper {
     background: #dadada url(../img/greyzz.png);
-    padding: 15px 0 20px;
+    border-top: 5px solid #333;
+    padding: 10px 0 20px;
     position: fixed;
-    top: 0;
+    top: 0px;
     width: 100%;
     z-index: 9999;
   }
@@ -321,8 +321,30 @@ p {
 -------------------------------------------------------------------------------*/
 
 header { 
-  padding: 0 0 30px;
+  //padding: 0 0 30px;
   border-bottom: 1px dotted $border-color;
+  //padding: 50px 0;
+
+  .clearfix {
+    margin: 0 0 50px;
+  }
+
+  footer.clearfix { margin: 0 0 30px; }
+
+  .intro {
+    /*background: #fafafa;
+    border: 1px solid #e1e1e1;
+    @include border-radius(5px);
+    padding: 20px 10% 0;*/
+    padding: 0 10%;
+    margin: 0 0 10px;
+    text-align: center;
+
+    p {
+      padding: 0 0 30px;
+    }
+  }
+
 }
 
   .main-title,
@@ -396,10 +418,13 @@ header {
 
     .knight-rider { background: url(../img/gif/knight_rider.gif) no-repeat top center; }
     .mr-t { background: url(../img/gif/mr_t_shark_punch.gif) no-repeat top center; }
-    .bttf { background: url(../img/gif/bttf_1.gif) no-repeat top center; }
-    
+    .bttf { background: url(../img/gif/bttf_1.gif) no-repeat top center; }    
     .terminator-2 { background: url(../img/gif/terminator_2.gif) no-repeat -113px top; }
     .ghostbusters { background: url(../img/gif/ghostbusters.gif) no-repeat -116px top; }
+    .predator { background: url(../img/gif/predator.gif) no-repeat center -20px; }
+    .top-gun { background: url(../img/gif/top_gun.gif) no-repeat -300px top; }
+    .indiana-jones { background: url(../img/gif/indiana_jones.gif) no-repeat -170px top; }
+    .die-hard { background: url(../img/gif/die_hard.gif) no-repeat -100px top; }
 
     .hover-photo {
       background-size: cover; 
@@ -415,12 +440,6 @@ header {
       opacity: 1; 
     }
 
-  }    
-
-  .intro {
-    padding: 0 10%;
-    margin: 0 0 10px;
-    text-align: center;
   }
 
 
@@ -434,7 +453,7 @@ header {
   
   .work,
   .about,
-  .blog {
+  .music {
     //border-bottom: 1px dotted $border-color;
     padding-bottom: 20px;
   }
@@ -461,6 +480,7 @@ header {
 
     .work-item.walter { background: url(../img/work_walter.jpg) no-repeat top center; }
     .work-item.slipslide { background: url(../img/work_slipslide.jpg) no-repeat top center; }
+    .work-item.secure { background: url(../img/work_secure.jpg) no-repeat top center; }
 
     .work-item:hover { 
       border-color: #999;
@@ -470,7 +490,13 @@ header {
 
   }
 
-  .blog { margin: 0 0 10px; }
+  //.blog { margin: 0 0 10px; }
+
+  .music {
+
+    p { text-align: center; }
+
+  }
 
 
 /* Footer Styles
@@ -557,7 +583,9 @@ footer.bottom {
 
     .ghostbusters { background-position: -80px top; }
     .terminator-2 { background-position: -85px top; }
-
+    .top-gun { background-position: -270px top; }
+    .indiana-jones { background-position: -120px top; }
+    .die-hard { background-position: -70px top; }
   }
 
   footer { padding: 20px 0; }
@@ -725,15 +753,13 @@ footer.bottom {
     height: 150px;
     width: 150px;
 
-    /*.lazer-photo { 
-      height: 150px;
-      width: 150px;
-    }*/
-
     .hover-photo { height: 150px; }
 
     .ghostbusters { background-position: -60px top; }
     .terminator-2 { background-position: -65px top; }
+    .top-gun { background-position: -190px top; }
+    .indiana-jones { background-position: -90px top; }
+    .die-hard { background-position: -50px top; }
   }
 
   .sub-title { 
