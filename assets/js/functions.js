@@ -26,7 +26,7 @@
 				if(theTarget == "index") { 	$('html, body').animate({ scrollTop: "0px" }, 500); } 
 				else { $('html, body').animate({ scrollTop: $("#"+theTarget).offset().top-71 }, 500);}
 			} else {
-				console.log("hamburger");
+				//console.log("hamburger");
 			}
 
 		});

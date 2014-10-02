@@ -323,10 +323,10 @@ p {
 header { 
   //padding: 0 0 30px;
   border-bottom: 1px dotted $border-color;
-  //padding: 50px 0;
+  padding: 75px 0 15px;
 
   .clearfix {
-    margin: 0 0 50px;
+    margin: 0 0 75px;
   }
 
   footer.clearfix { margin: 0 0 30px; }
@@ -568,6 +568,8 @@ footer.bottom {
     h2 { margin: 14px 0 0; }
   }
 
+  header { padding: 0; }
+
   .main-title {
     margin: 0;
     h2 { margin: 0 0 5px; }
@@ -604,6 +606,15 @@ footer.bottom {
     h3 { margin: 0 0 15px; }
   }
 
+  header { 
+
+    .clearfix { margin: 0 0 20px; }
+    .intro {
+      p { padding: 0; }
+    }
+    footer.clearfix { margin: 0 0 30px; }
+  }
+
   .main-photo {
     float: none;    
     margin: 0 auto;
@@ -636,27 +647,14 @@ footer.bottom {
 
   }
 
-
 }
 
-@media screen and (max-width: 520px) {
+
+@media screen and (max-width: 640px) {
 
   body { padding: 50px 0 40px; }
 
-  h1 {
-    font-size: 60px;
-    line-height: 60px;
-  }
-
-  .show-menu .main-nav ul,
-  .show-menu .wrapper {    
-    @include transform(translateX(110px));
-  }
-
-  .mobile-hidden { display: inline; }
-
   .main-nav {
-
     background: #444;
     border: 0;
     border-top: 5px solid #333;
@@ -721,10 +719,29 @@ footer.bottom {
 
   }
 
+}
+
+
+@media screen and (max-width: 520px) {
+
+  h1 {
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  .main-title {
+    h1 {
+      font-size: 60px;
+      line-height: 60px;
+    }
+  }
+  
   .main-title { 
     h2,
     h3 { display: none; }
   }
+
+  .mobile-hidden { display: inline; }
 
   .social {
     width: 138px;
@@ -747,7 +764,7 @@ footer.bottom {
 
 @media screen and (max-width: 460px) {
 
-  header { padding: 0 0 20px; }
+  header { padding: 20px 0 0; }
 
   .main-photo {
     height: 150px;
