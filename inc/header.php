@@ -29,7 +29,7 @@
 <meta name="author" content="Tim George" />
 <meta name="description" content="Tim often enjoys coding to Stan Bush's 'The Touch'." />
 
-<meta name="google-site-verification" content="" />
+<meta name="google-site-verification" content="jjAew9bmyHsT_U5BIFoSsjSd01R96zaSarkJjZJB894" />
 
 <meta name="Copyright" content="<?php echo date('Y')?> - Tim George" />
 
@@ -78,7 +78,7 @@
 </div>
 
 <div class="intro">
-<p>I'm<span class="mobile-hidden"> Tim George,</span> a Boston-based User Interface &amp; Web Developer. I am currently employed as the Managing UI/UX Architect at <a href="http://bostonfinancial.com">Boston Financial Data Services</a>.</p>
+<p>I'm<span class="mobile-hidden"> Tim George,</span> a Boston-based User Interface &amp; Web Developer, who is currently employed as the Managing UI/UX Architect at <a href="http://bostonfinancial.com">Boston Financial Data Services</a>.</p>
 </div>
 
 <footer class="clearfix">

@@ -231,6 +231,11 @@ p {
   padding: 0 0 20px;
 }
 
+blockquote {
+  font-size: 17px;
+  line-height: 23px;
+}
+
 
 /* Main navigation
 -------------------------------------------------------------------------------*/
@@ -447,55 +452,87 @@ header {
 -------------------------------------------------------------------------------*/
 
 .content {
-  padding: 30px 0 0;
+  padding: 70px 0 0;
   h2 { text-align: center; }
 }
   
   .work,
   .about,
   .music {
-    //border-bottom: 1px dotted $border-color;
-    padding-bottom: 20px;
+    border-bottom: 1px dotted $border-color;
+    padding-bottom: 50px;
   }
 
   .work {
-    
-    .work-item {
-      background: #eaeaea;
+
+    li {
+      background: #fff;
       border: 1px solid #ccc;
+      border-bottom: 2px solid #999;
+      @include border-radius(5px);
+      display: block;
       float: left;
       height: 200px;
       margin: 0 2% 20px 0;
       opacity: 0.5;
+      padding: 10px;
       @include transition(all,0.3s,ease);
       width: 32%;
 
       a {
         display: block;
-        height: 200px;
+        height: 178px;
         text-indent: -9999px;
       }
 
+      .work-item.walter { background: url(../img/work_walter.jpg) no-repeat top center; }
+      .work-item.slipslide { background: url(../img/work_slipslide.jpg) no-repeat top center; }
+      .work-item.secure { background: url(../img/work_secure.jpg) no-repeat top center; }
+
     }
-
-    .work-item.walter { background: url(../img/work_walter.jpg) no-repeat top center; }
-    .work-item.slipslide { background: url(../img/work_slipslide.jpg) no-repeat top center; }
-    .work-item.secure { background: url(../img/work_secure.jpg) no-repeat top center; }
-
-    .work-item:hover { 
-      border-color: #999;
+    
+    li:hover { 
       opacity: 1; 
     }
-    .work-item:nth-child(3n+1) { margin: 0; }
+    
+    li:nth-child(3n) { margin: 0; }
+
+    blockquote {
+      color: #666;
+      padding: 0 12% 20px;
+      text-align: center;
+    }
 
   }
 
   //.blog { margin: 0 0 10px; }
 
+  .about {
+
+    .about-text {
+      float: left;
+      width: 77%;
+    }
+
+    .about-photo {
+      background: url(../img/tg_ruckus_run.jpg) no-repeat top center;
+      background-position: -102px 0;
+      background-size: cover;
+      border: 1px solid #666;
+      border-bottom: 2px solid #333;
+      @include border-radius(5px);
+      float: right;
+      height: 440px;
+      margin: 5px 0 0;
+      opacity: 0.75;
+      width: 20%;
+    }
+
+  }
+
   .music {
-
+    border-bottom: 0;
     p { text-align: center; }
-
   }
 
 
@@ -590,6 +627,17 @@ footer.bottom {
     .die-hard { background-position: -70px top; }
   }
 
+  .about {
+
+    .about-text {
+      float: none;
+      width: auto;
+    }
+
+    .about-photo { display: none; }
+
+  }
+
   footer { padding: 20px 0; }
   footer.bottom { padding: 30px 0; }
 		
@@ -637,13 +685,13 @@ footer.bottom {
 
   .work {
     
-    .work-item {
+    li {
       width: 48%;
       margin: 0 4% 20px 0;
     }
 
-    .work-item:nth-child(2n+1) { margin-right: 0 !important; }
-    .work-item:nth-child(3n+1) { margin: 0 4% 20px 0; }
+    li:nth-child(2n) { margin-right: 0 !important; }
+    li:nth-child(3n) { margin: 0 4% 20px 0; }
 
   }
 
@@ -750,13 +798,16 @@ footer.bottom {
 
   .work {
     
-    .work-item {
+    li {
       width: 100%;
       margin: 0 0 15px 0;
     }
 
-    .work-item:nth-child(2n+1) { margin-right: 0; }
-    .work-item:nth-child(3n+1) { margin: 0 0 15px 0; }
+    li:nth-child(2n) { margin-right: 0; }
+    li:nth-child(3n) { margin: 0 0 15px 0; }
+
+    blockquote { padding: 0 0 20px; }
+
   }
 
 }

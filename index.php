@@ -1,27 +1,25 @@
 <?php include($_SERVER['DOCUMENT_ROOT'].'/inc/header.php'); ?>
 
-<!-- <section class="index content clearfix">
-<div class="intro">
-<p>I'm<span class="mobile-hidden"> Tim George,</span> a Boston-based User Interface &amp; Web Developer. I am currently employed as the Managing UI/UX Architect at <a href="http://bostonfinancial.com">Boston Financial Data Services</a>.</p>
-</div>
-</section> -->
-
-<!-- <footer class="clearfix">
-<?php include($_SERVER['DOCUMENT_ROOT'].'/inc/social.php'); ?>
-
-</footer> -->
-
 <section id="work" class="work content clearfix">
 <h2>Work</h2>
-<div class="work-item secure"><a href="/">Secure Account Access</a></div>
-<div class="work-item slipslide"><a href="/">Slip &amp; Slide Kegger</a></div>
-<div class="work-item walter"><a href="/">Walter A. Furman Co.</a></div>
+<blockquote>Most of the projects I currently work on contain sensitive financial data, so unfortunately I am only able to post generic examples. However, I also have a small - but growing - personal portfolio.</blockquote>
+<ul class="clearfix">
+  <li><div class="work-item secure"><a href="/">Secure Account Access</a></div></li>
+  <li><div class="work-item slipslide"><a href="/">Slip &amp; Slide Kegger</a></div></li>
+  <li><div class="work-item walter"><a href="/">Walter A. Furman Co.</a></div></li>
+</ul>
 </section>
 
 <section id="about" class="about content clearfix">
 <h2>About</h2>
-<p>Nam mauris purus, efficitur ac augue a, consequat lobortis elit. Suspendisse potenti. Proin dolor libero, placerat nec nulla ac, lacinia bibendum purus. Proin gravida, odio eget ultrices malesuada, ipsum erat rutrum ligula, eget cursus massa felis eget nunc. Vivamus eu congue odio. In tincidunt commodo posuere. Morbi ac tincidunt turpis, convallis finibus elit. Nulla congue dictum tincidunt. Aenean dui leo, tincidunt a quam eu, pulvinar lobortis lectus. Duis sit amet dapibus arcu, sit amet interdum dolor. Proin massa eros, posuere id mattis vitae, mollis in lacus. Mauris ut vehicula sapien, et congue sapien. Proin a quam leo. Nam dapibus tortor eu urna interdum fringilla. Curabitur vestibulum augue eget porta dapibus.</p>
-<p>Nam mauris purus, efficitur ac augue a, consequat lobortis elit. Suspendisse potenti. Proin dolor libero, placerat nec nulla ac, lacinia bibendum purus. Proin gravida, odio eget ultrices malesuada, ipsum erat rutrum ligula, eget cursus massa felis eget nunc. Vivamus eu congue odio. In tincidunt commodo posuere. Morbi ac tincidunt turpis, convallis finibus elit. Nulla congue dictum tincidunt. Aenean dui leo, tincidunt a quam eu, pulvinar lobortis lectus. Duis sit amet dapibus arcu, sit amet interdum dolor. Proin massa eros, posuere id mattis vitae, mollis in lacus. Mauris ut vehicula sapien, et congue sapien. Proin a quam leo. Nam dapibus tortor eu urna interdum fringilla. Curabitur vestibulum augue eget porta dapibus.</p>
+<div class="about-text">
+<p>If you're currently looking to work with me, or want more detailed information about my background, please see my <a href="http://resume.timrgeorge.com/">Resume</a>, as I usually keep it up to date.</p>
+<p>My current job as Managing UI/UX Architect at <a href="http://bostonfinancial.com">Boston Financial Data Services</a> provides me with plenty of challenging opportunites to help design and develop simple-to-use interfaces for complex financial web applications. I firmly believe that the process for creating these types of interfaces is not something that can be slapped on at the very end - rather, it should be all-inclusive approach, starting at the very beginning.</p>
+<p>Additionally, I have a background in Web Development, which also helps me serve my other responsibilites as a Lead Technical Consultant. Clean code, using the right ( not necessarily the most popular ) tools for the job, and proper technical documentation are very important to me.</p>
+<p>As for the fun stuff, I have an unhealthy obsession with <a href="http://www.last.fm/user/timrgeorge">Scrobbling</a> my music listening habits on <a href="http://www.last.fm/">Last.fm</a>. I also enjoy watching 80&#8217;s movies and tv shows, playing the saxophone, building Legos, playing video games, or just hanging out with my friends around the Greater Boston area.</p>
+</div>
+<div class="about-photo">
+</div>
 </section>
 
 <?php include($_SERVER['DOCUMENT_ROOT'].'/inc/footer.php'); ?>
