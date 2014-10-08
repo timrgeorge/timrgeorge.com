@@ -8,6 +8,7 @@
   <li><div class="work-item slipslide"><a href="/">Slip &amp; Slide Kegger</a></div></li>
   <li><div class="work-item walter"><a href="/">Walter A. Furman Co.</a></div></li>
 </ul>
+<blockquote id="temp-message">Ok, so the work links clearly aren't taking you anywhere - that's because I am extremely impatient and decided to throw up this site before finishing the detail-pages for the items listed above. I apologize and will have the details up soon.</blockquote>
 </section>
 
 <section id="about" class="about content clearfix">
