@@ -57,10 +57,9 @@
 </nav>
 </div>
 
-<div class="wrapper">
-
 <header>
-<div class="clearfix">
+<article class="wrapper">
+<div class="title-photo clearfix">
 <a class="main-title" href="/">
 <h1>Hi Friends</h1>
 <h2>I'm Tim George<br />User Interface&nbsp;&nbsp;&amp;&nbsp;&nbsp;Web Developer.<br />80's Enthusiast.&nbsp;&nbsp;Lego-Builder.</h2>

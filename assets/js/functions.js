@@ -7,7 +7,7 @@
 			var theTarget = $(this).attr("href");
 			if( !($(this).hasClass("mobile-menu-btn")) ) {
 				var mobileVisible = $(".mobile-menu-btn").is(':visible') ? true : false;
-				if(mobileVisible) { $('.main-nav ul').toggle().toggleClass("active"); var offset = -10; }
+				if(mobileVisible) { $('.main-nav ul').toggle().toggleClass("active"); var offset = 40; }
 				else { var offset = 50; }
 				if(theTarget == "index") { 	$('html, body').animate({ scrollTop: "0px" }, 500); } 
 				else { $('html, body').animate({ scrollTop: $("#"+theTarget).offset().top-offset }, 500);}

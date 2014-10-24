@@ -136,8 +136,14 @@ input[type=button] {width: auto; overflow: visible;}
 
 /* Variables
 -------------------------------------------------------------------------------*/
-$highlight-color: #1695A3;
-$highlight-alt: #EB7F00;
+// COLORS FROM Aspirin-C theme via Kuler:
+// https://color.adobe.com/Aspirin-C-color-theme-251864/edit/?copy=true
+$dark-blue: #225378;
+$teal: #1695A3;
+$light-blue: #ACF0F2;
+$light-green: #F3FFE2;
+$orange: #EB7F00;
+
 $border-color: #bbb;
 
 
@@ -173,12 +179,17 @@ $border-color: #bbb;
   transform: $transformation;
 }
 
+@mixin box-shadow($hshadow,$vshadow,$blur,$spread,$rgba-R,$rgba-G,$rgba-B,$rgba-A){
+  -webkit-box-shadow: $hshadow $vshadow $blur $spread rgba($rgba-R, $rgba-G, $rgba-B, $rgba-A);
+  -moz-box-shadow:    $hshadow $vshadow $blur $spread rgba($rgba-R, $rgba-G, $rgba-B, $rgba-A);
+  box-shadow:         $hshadow $vshadow $blur $spread rgba($rgba-R, $rgba-G, $rgba-B, $rgba-A);
+}
 
 body { font: 20px 'Titillium Web', Helmet, Freesans, sans-serif; }
 body, select, input, textarea { color: #333; }
 
-a {color: $highlight-color;}
-a:hover {color: $highlight-alt;}
+a {color: $teal;}
+a:hover {color: $orange;}
 
 /*	j.mp/webkit-tap-highlight-color */
 a:link {-webkit-tap-highlight-color: #fcd700;} 
@@ -196,7 +207,7 @@ textarea:-moz-placeholder { color:#a9a9a9; }
 
 body {
   background: #dadada url(../img/greyzz.png);
-  padding: 111px 0;
+  padding: 75px 0 0;
 }
 
 .wrapper,
@@ -245,7 +256,8 @@ blockquote {
   .nav-wrapper {
     background: #dadada url(../img/greyzz.png);
     border-top: 5px solid #333;
-    padding: 10px 0 20px;
+    @include box-shadow(0,3px,10px,0,50,50,50,0.4);
+    padding: 10px 0 0;
     position: fixed;
     top: 0px;
     width: 100%;
@@ -254,7 +266,7 @@ blockquote {
 
   .main-nav {
 
-    border-bottom: 1px dotted $border-color;
+    //border-bottom: 1px dotted $border-color;
     margin: 0 auto;
 
     .mobile-menu-btn { display: none; }
@@ -265,7 +277,7 @@ blockquote {
       @include transition(all,0.2s,ease);
     }
 
-      h2:hover { color: $highlight-alt; }
+      h2:hover { color: $orange; }
 
     ul {
       float: right;
@@ -273,7 +285,7 @@ blockquote {
       /*width: 400px;*/
       width: 290px;
       //margin: 0 auto 30px;
-      margin: 10px 0 20px;      
+      margin: 10px 0 15px;      
     }
 
     li { 
@@ -300,7 +312,7 @@ blockquote {
     }
 
     li a { 
-      color: $highlight-color;
+      color: $teal;
       display: block;
       float: left;
       font-size: 20px;
@@ -314,11 +326,11 @@ blockquote {
     li:last-child a { margin: 0; }
 
     li a:hover {    
-      color: $highlight-alt;
+      color: $orange;
       text-decoration: underline;
     }
 
-    li a.active { color: $highlight-alt; }
+    li a.active { color: $orange; }
   }
 
 
@@ -327,14 +339,16 @@ blockquote {
 
 header { 
   //padding: 0 0 30px;
-  border-bottom: 1px dotted $border-color;
+  background: url(../img/wild_oliva.png);
+  //border-bottom: 1px dotted $border-color;
+  color: #fff;
   padding: 75px 0 15px;
 
-  .clearfix {
-    margin: 0 0 75px;
+  .title-photo {
+    margin: 0 0 60px;
   }
 
-  footer.clearfix { margin: 0 0 30px; }
+  //footer.clearfix { margin: 0 0 30px; }
 
   .intro {
     /*background: #fafafa;
@@ -348,13 +362,19 @@ header {
     p {
       padding: 0 0 30px;
     }
+
+    a { color: #fff; }
+    a:hover { color: $orange; }
+
+    //a { color: $orange; }
+    //a:hover { text-decoration: none; }
   }
 
 }
 
   .main-title,
   .sub-title { 
-    color: #666;
+    color: $teal;
     display: block;
     float: left;
     text-align: center;
@@ -368,19 +388,23 @@ header {
       letter-spacing: -4px;
       line-height: 75px;
       margin: 0 0 20px;
-      text-shadow: 0 -1px 0 #444;
+      text-shadow: 0 -1px 0 #000;
     }
     
     h2 { 
-      color: #000;
+      //color: #eaeaea;
+      color: #fff;
+      letter-spacing: -1.5px;
       margin: 0 0 20px;
       text-transform: uppercase; 
     }
 
+    h3 { color: #fff; }
+
   }
 
-    .main-title:hover,
-    .sub-title:hover { color: #000; }
+    .main-title:hover { color: $light-blue; }
+    //.sub-title:hover { color: #999; }
 
   .sub-title { 
     float: none;
@@ -407,8 +431,10 @@ header {
 
   .main-photo {
     background: #fff url(../img/tg_photo.jpg) no-repeat top center;
-    background-size: cover; 
+    background-size: cover;
+    border: 2px solid #444;
     @include border-radius(300px);
+    @include box-shadow(0,0,20px,0,0,0,0,0.50);
     float: right;
     height: 275px;
     margin: 3px 8% 0 0;
@@ -417,9 +443,6 @@ header {
     position: relative;
     @include transition(all,0.5s,ease);
     width: 27%;
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    0px 0px 10px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         0px 0px 10px 0px rgba(50, 50, 50, 0.75);
 
     .knight-rider { background: url(../img/gif/knight_rider.gif) no-repeat top center; }
     .mr-t { background: url(../img/gif/mr_t_shark_punch.gif) no-repeat top center; }
@@ -452,15 +475,15 @@ header {
 -------------------------------------------------------------------------------*/
 
 .content {
-  padding: 70px 0 0;
+  padding: 70px 0;
   h2 { text-align: center; }
 }
   
   .work,
   .about,
   .music {
-    border-bottom: 1px dotted $border-color;
-    padding-bottom: 50px;
+    //border-bottom: 1px dotted $border-color;
+    //padding-bottom: 50px;
   }
 
   .work {
@@ -513,6 +536,17 @@ header {
 
   .about {
 
+    background: url(../img/blue_bg.jpg);
+    color: #fff;
+
+    h2 { 
+      letter-spacing: -1px; 
+      text-shadow: 0 -1px 0 #000;
+    }
+
+    a { color: $orange; }
+    a:hover { color: #fff; }
+    
     .about-text {
       float: left;
       width: 77%;
@@ -522,7 +556,7 @@ header {
       background: url(../img/tg_ruckus_run.jpg) no-repeat top center;
       background-position: -102px 0;
       background-size: cover;
-      border: 1px solid #666;
+      border: 1px solid #999;
       border-bottom: 2px solid #333;
       @include border-radius(5px);
       float: right;
@@ -548,7 +582,9 @@ footer {
 }
 
 footer.bottom {
-  border-top: 1px dotted $border-color;
+  background: url(../img/wild_oliva.png);
+  padding: 30px 0 100px;
+  //border-top: 1px dotted $border-color;
 }
 
 .social {
@@ -556,16 +592,16 @@ footer.bottom {
   margin: 0 auto;
 
   li { 
-    float: left; 
-    margin: 0 7px;
+    background: #000;
     @include border-radius(3px);
-    background: #777;
+    float: left; 
+    margin: 0 7px;   
     opacity: 0.5;
     @include transition(all,0.3s,ease);
   }
 
   li:hover {
-    background: #333;
+    background: $teal;
     opacity: 1;
   }
 
@@ -609,7 +645,7 @@ footer.bottom {
     h2 { margin: 14px 0 0; }
   }
 
-  header { padding: 0; }
+  header { padding: 30px 0 10px; }
 
   .main-title {
     margin: 0;
@@ -643,7 +679,6 @@ footer.bottom {
   }
 
   footer { padding: 20px 0; }
-  footer.bottom { padding: 30px 0; }
 		
 }
 
@@ -704,7 +739,7 @@ footer.bottom {
 
 @media screen and (max-width: 640px) {
 
-  body { padding: 50px 0 40px; }
+  body { padding: 40px 0 0; }
 
   .main-nav {
     background: #444;
@@ -771,6 +806,10 @@ footer.bottom {
       width: 25px;
     }
 
+  }
+
+  .content {
+    padding: 30px 0;
   }
 
 }

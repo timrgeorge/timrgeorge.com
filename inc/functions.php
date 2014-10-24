@@ -4,15 +4,20 @@
     $lastfmrequest = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&limit=1&user=timrgeorge&api_key=03fd6a5efdecd80ff180234e98bb2c59&format=json';
     $lastfminput = file_get_contents($lastfmrequest);
     $var = json_decode($lastfminput,true);
+    $tracks = $var['recenttracks']['track'];
     date_default_timezone_set('America/New_York');
-    if ($var['recenttracks']['track'][1]['url'] != "" ) { 
+    //if ($var['recenttracks']['track'][1]['url'] != "" ) { 
+    //if ( is_array($var['recenttracks']['track']) ) { 
+    if(isset($var['recenttracks']['track'][1]['url'])) {
       $txt = '<a href="http://' . $var['recenttracks']['track'][1]['url'] . '">' . $var['recenttracks']['track'][1]['artist']['#text'] . ' - ' . $var['recenttracks']['track'][1]['name'] . '</a><br />on ' . date('l, F jS \a\t g:i a',$var['recenttracks']['track'][1]['date']['uts']);  
       // . $var[0]->artist . ' - ' . $var[0]->name; 
     } else { 
       $txt = '<a href="http://' . $var['recenttracks']['track']['url'] . '">' . $var['recenttracks']['track']['artist']['#text'] . ' - ' . $var['recenttracks']['track']['name'] . '</a><br />on ' . date('l, F jS \a\t g:i a',$var['recenttracks']['track']['date']['uts']); 
       // . $var[0]->artist . ' - ' . $var[0]->name; 
     }
+    
     return ($txt);
+
   } 
   
   function get_slogan() {       

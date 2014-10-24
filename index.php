@@ -1,6 +1,7 @@
 <?php include($_SERVER['DOCUMENT_ROOT'].'/inc/header.php'); ?>
 
 <section id="work" class="work content clearfix">
+<article class="wrapper">
 <h2>Work</h2>
 <blockquote>Most of the projects I currently work on contain sensitive financial data, so unfortunately I am only able to post generic examples. However, I also have a small - but growing - personal portfolio.</blockquote>
 <ul class="clearfix">
@@ -9,9 +10,11 @@
   <li><div class="work-item walter"><a href="/">Walter A. Furman Co.</a></div></li>
 </ul>
 <blockquote id="temp-message">Ok, so the work links clearly aren't taking you anywhere - that's because I am extremely impatient and decided to throw up this site before finishing the detail-pages for the items listed above. I apologize and will have the details up soon.</blockquote>
+</article>
 </section>
 
 <section id="about" class="about content clearfix">
+<article class="wrapper">
 <h2>About</h2>
 <div class="about-text">
 <p>If you're currently looking to work with me, or want more detailed information about my background, please see my <a href="http://resume.timrgeorge.com/">Resume</a>, as I usually keep it up to date.</p>
@@ -21,6 +24,7 @@
 </div>
 <div class="about-photo">
 </div>
+</article>
 </section>
 
 <?php include($_SERVER['DOCUMENT_ROOT'].'/inc/footer.php'); ?>
