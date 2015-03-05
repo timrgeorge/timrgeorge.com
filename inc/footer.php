@@ -1,13 +1,17 @@
+<?php if ($_SERVER['REQUEST_URI'] == "/") { ?>
 <section id="music" class="music content clearfix">
 <h2>Currently Listening To</h2>
 <p><?php echo getLastFM(); ?></p>
 
 </section>
+<?php } ?>
 
 <footer class="bottom clearfix">
 <?php include($_SERVER['DOCUMENT_ROOT'].'/inc/social.php'); ?>
-
+<p>&copy; <?php echo date("Y"); ?> Tim George</p>
 </footer>
+
+</div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>window.jQuery || document.write("<script src='http://<?php echo $_SERVER['SERVER_NAME']; ?>/assets/js/libs/jquery-1.11.0.min.js'>\x3C/script>")</script>
@@ -20,7 +24,7 @@
 
   ga('create', 'UA-709645-11', 'auto');
   ga('send', 'pageview');
-
 </script>
+
 </body>
 </html>

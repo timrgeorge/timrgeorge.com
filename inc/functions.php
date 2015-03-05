@@ -1,5 +1,7 @@
 <?php
   
+  date_default_timezone_set('America/New_York');
+
   function getLastFM() {
     $lastfmrequest = 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&limit=1&user=timrgeorge&api_key=03fd6a5efdecd80ff180234e98bb2c59&format=json';
     $lastfminput = file_get_contents($lastfmrequest);

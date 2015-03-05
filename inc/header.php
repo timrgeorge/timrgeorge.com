@@ -7,17 +7,24 @@
 <!--[if IE 9 ]>    <html class="ie ie9 ie-lt10 no-js" lang="en"> <![endif]-->
 <!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
-<!-- ************************************************************** -->
-<!-- Hey, thanks for checking out my source code and seeing what    -->
-<!-- I'm all about. If you like what you see, please feel free to   -->
-<!-- get in touch with me at: tim@timrgeorge.com                    -->
-<!--                                                                -->
-<!-- Thanks again for coming by!                                    -->
-<!-- For your efforts, please enjoy the following:                  -->
-<!-- https://www.youtube.com/watch?v=AZKpByV5764                    -->
-<!-- or                                                             -->
-<!-- https://www.youtube.com/watch?v=3Sso3h0xMJA                    -->
-<!-- ************************************************************** -->
+<!-- ************************************************************************ -->
+<!-- Hey, thanks for checking out my source code and seeing what I'm all      -->
+<!-- about. If you like what you see, please feel free to get in touch with   -->
+<!-- me at: tim@timrgeorge.com                                                -->
+<!--                                                                          -->
+<!-- Thanks again for coming by! - For your efforts, enjoy the following:     -->
+<!-- https://www.youtube.com/watch?v=AZKpByV5764                              -->
+<!-- or                                                                       -->
+<!-- https://www.youtube.com/watch?v=3Sso3h0xMJA                              -->
+<!--                                                                          -->
+<!-- Background Image:    http://subtlepatterns.com/                          -->
+<!-- Google Fonts:        https://www.google.com/fonts/specimen/Titillium+Web -->
+<!-- Animated GIFs via:   http://giphy.com/                                   -->
+<!-- Initial Templates:   https://github.com/murtaugh/HTML5-Reset             -->
+<!--                                                                          -->
+<!-- Colors from Aspirin-C theme via Kuler:                                   -->
+<!-- https://color.adobe.com/Aspirin-C-color-theme-251864/                    -->
+<!-- ************************************************************************ -->
 
 <head>
 
@@ -25,9 +32,9 @@
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<title>Tim George - UI/UX &amp; Web Developer</title>
+<title>Tim George - UI &amp; Web Developer</title>
 <meta name="author" content="Tim George" />
-<meta name="description" content="Tim often enjoys coding to Stan Bush's 'The Touch'." />
+<meta name="description" content="User Interface &amp; Web Developer. 80's Enthusiast. Lego-Builder. Tim often enjoys coding to Stan Bush's 'The Touch'." />
 
 <meta name="google-site-verification" content="jjAew9bmyHsT_U5BIFoSsjSd01R96zaSarkJjZJB894" />
 
@@ -41,28 +48,50 @@
 
 <script src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/assets/js/libs/modernizr-2.8.3.min.js"></script>
 
+<!-- Twitter: see https://dev.twitter.com/docs/cards/types/summary-card for details -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@timrgeorge">
+<meta name="twitter:title" content="Tim George - UI &amp; Web Developer">
+<meta name="twitter:description" content="User Interface &amp; Web Developer. 80's Enthusiast. Lego-Builder. Tim often enjoys coding to Stan Bush's 'The Touch'.">
+<meta name="twitter:url" content="http://timrgeorge.com">
+<meta name="twitter:image" content="http://timrgeorge.com/assets/img/facebook_og.jpg" />
+<!-- Facebook (and some others) use the Open Graph protocol: see http://ogp.me/ for details -->
+<meta property="og:title" content="Tim George - UI &amp; Web Developer" />
+<meta property="og:description" content="User Interface &amp; Web Developer. 80's Enthusiast. Lego-Builder. Tim often enjoys coding to Stan Bush's 'The Touch'." />
+<meta property="og:url" content="http://timrgeorge.com" />
+<meta property="og:image" content="http://timrgeorge.com/assets/img/facebook_og.jpg" />
+
 </head>
 
 <body>
 
 <div class="nav-wrapper">
-<nav class="main-nav clearfix">
-<a href="index"><h2>Tim George</h2></a>
+<nav class="main-nav<?php if ($_SERVER['REQUEST_URI'] != "/") { ?> sub-nav<?php } ?> clearfix">
+<?php if ($_SERVER['REQUEST_URI'] == "/") { ?><a href="index"><?php } else { ?><a class="home" href="/index"><?php } ?><h2>Tim George</h2></a>
 <a class="mobile-menu-btn" href="hamburger">Menu Icon</a>
 <ul>
+<?php if ($_SERVER['REQUEST_URI'] == "/") { ?>
 <li><a href="index">Home</a></li>
 <li><a href="work">Work</a></li>
 <li><a href="about">About</a></li>
+<li><a href="music">Music</a></li>
+<li class="resume"><a class="resume" href="http://resume.timrgeorge.com">Resume</a></li>
+<?php } else { ?>
+<li><a href="/index">&laquo; Back</a></li>
+<li class="resume"><a class="resume" href="http://resume.timrgeorge.com">Resume</a></li>
+<?php } ?>
 </ul>
 </nav>
 </div>
 
-<header>
+<?php if ($_SERVER['REQUEST_URI'] == "/") { ?>
+<header class="main-page">
 <article class="wrapper">
 <div class="title-photo clearfix">
-<a class="main-title" href="/">
+<a itemscope itemtype="http://schema.org/Person" class="main-title" href="/">
+<link itemprop="url" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/" />
 <h1>Hi Friends</h1>
-<h2>I'm Tim George<br />User Interface&nbsp;&nbsp;&amp;&nbsp;&nbsp;Web Developer.<br />80's Enthusiast.&nbsp;&nbsp;Lego-Builder.</h2>
+<h2>I'm <span itemprop="name">Tim George</span><br /><span itemprop="jobTitle">User Interface <span class="ampersand">&amp;</span> Web Developer</span>.<br />80's Enthusiast.&nbsp;&nbsp;Lego-Builder.</h2>
 <h3><?php get_slogan(); ?></h3>
 </a>
 
@@ -85,3 +114,6 @@
 
 </footer>
 </header>
+
+<div class="main-content">
+<?php } ?>

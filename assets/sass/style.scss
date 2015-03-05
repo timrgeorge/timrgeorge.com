@@ -133,6 +133,10 @@ input[type=button] {width: auto; overflow: visible;}
 .clearfix:after { clear: both; }  
 .clearfix { zoom: 1; }  
 
+.align-right { float: right; }
+.text-right { text-align: right; }
+.align-left { float: left; }
+.no-padding { padding: 0 !important; }
 
 /* Variables
 -------------------------------------------------------------------------------*/
@@ -192,7 +196,7 @@ a {color: $teal;}
 a:hover {color: $orange;}
 
 /*	j.mp/webkit-tap-highlight-color */
-a:link {-webkit-tap-highlight-color: #fcd700;} 
+//a:link {-webkit-tap-highlight-color: #fcd700;} 
 
 ins {background-color: #fcd700; color: #000; text-decoration: none;}
 mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: bold;}
@@ -207,8 +211,12 @@ textarea:-moz-placeholder { color:#a9a9a9; }
 
 body {
   background: #dadada url(../img/greyzz.png);
-  padding: 75px 0 0;
+  //padding: 75px 0 0;
+  position: relative;
 }
+
+header article,
+.main-content { display: none; }
 
 .wrapper,
 .main-nav {
@@ -229,7 +237,7 @@ h2 {
   font-weight: bold;
   letter-spacing: -2px;
   line-height: 30px;
-  margin: 0 0 20px;
+  margin: 0 0 30px;
 }
 
 h3 {
@@ -255,6 +263,7 @@ blockquote {
   
   .nav-wrapper {
     background: #dadada url(../img/greyzz.png);
+    backface-visibility: hidden;
     border-top: 5px solid #333;
     @include box-shadow(0,3px,10px,0,50,50,50,0.4);
     padding: 10px 0 0;
@@ -282,15 +291,16 @@ blockquote {
     ul {
       float: right;
       height: 35px;
-      /*width: 400px;*/
-      width: 290px;
+      //width: 470px; // 90 * 4 + 100
+      // even need this? why did I do this?
+      //width: 290px;
       //margin: 0 auto 30px;
       margin: 10px 0 15px;      
     }
 
     li { 
       float: left;
-      margin: 0 0 0 20px;
+      //margin: 0 0 0 20px;
     }
 
     li:first-child {
@@ -316,11 +326,11 @@ blockquote {
       display: block;
       float: left;
       font-size: 20px;
-      margin: 0 20px 0 0;
+      //margin: 0 20px 0 0;
       text-align: center;
       text-decoration: none;
       @include transition(all,0.2s,ease);
-      width: 60px;
+      width: 80px;
     }
 
     li:last-child a { margin: 0; }
@@ -331,30 +341,29 @@ blockquote {
     }
 
     li a.active { color: $orange; }
+
+    li.resume a { 
+      margin: 0 0 0 10px;
+      //width: 80px; 
+    }
   }
 
+  .main-nav.sub-nav {
+     ul { width: auto; }
+  }
 
 /* Header elements - Main title, sub-title, hero photo
 -------------------------------------------------------------------------------*/
 
 header { 
-  //padding: 0 0 30px;
   background: url(../img/wild_oliva.png);
-  //border-bottom: 1px dotted $border-color;
   color: #fff;
-  padding: 75px 0 15px;
 
   .title-photo {
     margin: 0 0 60px;
   }
 
-  //footer.clearfix { margin: 0 0 30px; }
-
   .intro {
-    /*background: #fafafa;
-    border: 1px solid #e1e1e1;
-    @include border-radius(5px);
-    padding: 20px 10% 0;*/
     padding: 0 10%;
     margin: 0 0 10px;
     text-align: center;
@@ -366,10 +375,13 @@ header {
     a { color: #fff; }
     a:hover { color: $orange; }
 
-    //a { color: $orange; }
-    //a:hover { text-decoration: none; }
   }
 
+}
+
+header.main-page {
+  padding: 25vh 0 15px;
+  min-height: 100vh;
 }
 
   .main-title,
@@ -392,19 +404,32 @@ header {
     }
     
     h2 { 
-      //color: #eaeaea;
       color: #fff;
       letter-spacing: -1.5px;
       margin: 0 0 20px;
       text-transform: uppercase; 
+      span { font-weight: bold; }
     }
 
     h3 { color: #fff; }
 
+    .ampersand { 
+      display: inline-block;
+      padding: 0 6px;
+    }
+
+  }
+
+  .error {
+    .main-title,
+    .sub-title { 
+      width: 100%;
+    }
+    .main-title { margin-bottom: 35px; }
+    p { text-align: center; }
   }
 
     .main-title:hover { color: $light-blue; }
-    //.sub-title:hover { color: #999; }
 
   .sub-title { 
     float: none;
@@ -430,7 +455,7 @@ header {
   }
 
   .main-photo {
-    background: #fff url(../img/tg_photo.jpg) no-repeat top center;
+    background: #fff url(../img/tg_photo_2.jpg) no-repeat top center;
     background-size: cover;
     border: 2px solid #444;
     @include border-radius(300px);
@@ -475,50 +500,70 @@ header {
 -------------------------------------------------------------------------------*/
 
 .content {
-  padding: 70px 0;
+  padding: 110px 0;
   h2 { text-align: center; }
 }
-  
-  .work,
-  .about,
-  .music {
-    //border-bottom: 1px dotted $border-color;
-    //padding-bottom: 50px;
+
+  .content.music { 
+    min-height: 0; 
+    padding: 70px 0;
   }
+  
 
   .work {
 
-    li {
-      background: #fff;
-      border: 1px solid #ccc;
-      border-bottom: 2px solid #999;
-      @include border-radius(5px);
-      display: block;
-      float: left;
-      height: 200px;
-      margin: 0 2% 20px 0;
-      opacity: 0.5;
-      padding: 10px;
-      @include transition(all,0.3s,ease);
-      width: 32%;
+    @include transition(all,0.3s,ease);
 
-      a {
+    .worklist {
+
+      li {
+        background: #fff;
+        border: 1px solid #ccc;
+        border-bottom: 2px solid #999;
+        @include border-radius(5px);
         display: block;
-        height: 178px;
-        text-indent: -9999px;
+        float: left;
+        height: 200px;
+        margin: 0 2% 20px 0;
+        //opacity: 0.5;
+        padding: 10px;
+        //@include transition(all,0.3s,ease);
+        width: 32%;
+
+        a {
+          background-image: none;
+          color: #fff;
+          display: block;
+          font-size: 23px;
+          font-weight: bold;
+          height: 178px;
+          line-height: 23px;
+          overflow: hidden;
+          padding: 75px 0 0;
+          text-indent: -700px;
+          text-align: center;
+          text-decoration: none;
+          @include transition(all,0.7s,ease);
+        }
+
+        a:hover {
+          text-indent: 0;
+          background-image: url(../img/alpha.png);
+        }
+
+        .work-item { background: url(../img/work_sprite.jpg) no-repeat top center; }
+        .work-item.slipslide {  background-position: center -200px;  }
+        .work-item.walter { background-position: center -400px; }
+
       }
-
-      .work-item.walter { background: url(../img/work_walter.jpg) no-repeat top center; }
-      .work-item.slipslide { background: url(../img/work_slipslide.jpg) no-repeat top center; }
-      .work-item.secure { background: url(../img/work_secure.jpg) no-repeat top center; }
+      
+      li:hover { 
+        //opacity: 1; 
+      }
+      
+      li:nth-child(3n) { margin: 0; }
 
     }
-    
-    li:hover { 
-      opacity: 1; 
-    }
-    
-    li:nth-child(3n) { margin: 0; }
 
     blockquote {
       color: #666;
@@ -528,16 +573,59 @@ header {
 
   }
 
-  #temp-message {
-    display: none;
-    padding-top: 20px;
-    padding-bottom: 0;
+  .work-content {
+
+    padding-bottom: 25px;
+
+    .description {
+      float: left;
+      width: 58%;
+    }
+
+    ul {
+      margin: 5px 0 20px 35px;
+      li { list-style-type: disc; }
+    }
+
+    img {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-bottom: 2px solid #999;
+      @include border-radius(5px);
+      float: right;
+      padding: 10px;
+      width: 38%;
+    }
+
+    a.view-site {
+      background: $teal;
+      color: #fff;
+      display: inline-block;
+      margin: 10px 0 15px;
+      padding: 5px 20px;
+      text-decoration: none;
+      @include transition(all,0.3s,ease);
+    }
+
+    a.view-site:hover { background: $orange; }
+
+  }
+
+  .work-navigation { 
+    padding: 75px 0; 
+    p { 
+      padding: 0; 
+      a { color: #fff; }
+    }
+  }
+
+  .work-navigation,
+  .about {
+    background: url(../img/blue_bg_2.jpg);
+    color: #fff; 
   }
 
   .about {
-
-    background: url(../img/blue_bg.jpg);
-    color: #fff;
 
     h2 { 
       letter-spacing: -1px; 
@@ -553,11 +641,10 @@ header {
     }
 
     .about-photo {
-      background: url(../img/tg_ruckus_run.jpg) no-repeat top center;
-      background-position: -102px 0;
+      background: url(../img/tg_ruckus_run_2.jpg) no-repeat top center;
       background-size: cover;
       border: 1px solid #999;
-      border-bottom: 2px solid #333;
+      border-bottom: 2px solid #666;
       @include border-radius(5px);
       float: right;
       height: 440px;
@@ -571,7 +658,12 @@ header {
   .music {
     border-bottom: 0;
     p { text-align: center; }
+    h2 { margin: 0 0 20px; }
   }
+
+
+  #overlay { display: none; }
+
 
 
 /* Footer Styles
@@ -579,12 +671,19 @@ header {
 
 footer {
   padding: 30px 0;
+
+  p {
+    clear: both;
+    color: #eee;
+    font-size: 15px;
+    padding: 50px 0 0;
+    text-align: center;
+  }
 }
 
 footer.bottom {
   background: url(../img/wild_oliva.png);
-  padding: 30px 0 100px;
-  //border-top: 1px dotted $border-color;
+  padding: 50px 0 100px;
 }
 
 .social {
@@ -645,8 +744,6 @@ footer.bottom {
     h2 { margin: 14px 0 0; }
   }
 
-  header { padding: 30px 0 10px; }
-
   .main-title {
     margin: 0;
     h2 { margin: 0 0 5px; }
@@ -665,6 +762,26 @@ footer.bottom {
     .top-gun { background-position: -270px top; }
     .indiana-jones { background-position: -120px top; }
     .die-hard { background-position: -70px top; }
+  }
+
+  .work-content { 
+
+    .description { 
+      float: none;
+      width: auto;
+    }
+
+    img {
+      display: none;
+    }
+
+    a.view-site {
+      display: block;
+      margin: 10px auto 15px;
+      text-align: center;
+      width: 200px;
+    }
+
   }
 
   .about {
@@ -693,7 +810,9 @@ footer.bottom {
     h3 { margin: 0 0 15px; }
   }
 
-  header { 
+  header.main-page { 
+
+    padding: 105px 0 10px;   
 
     .clearfix { margin: 0 0 20px; }
     .intro {
@@ -724,13 +843,15 @@ footer.bottom {
 
   .work {
     
-    li {
-      width: 48%;
-      margin: 0 4% 20px 0;
-    }
+    .worklist {
+      li {
+        width: 48%;
+        margin: 0 4% 20px 0;
+      }
 
-    li:nth-child(2n) { margin-right: 0 !important; }
-    li:nth-child(3n) { margin: 0 4% 20px 0; }
+      li:nth-child(2n) { margin-right: 0 !important; }
+      li:nth-child(3n) { margin: 0 4% 20px 0; }
+    }
 
   }
 
@@ -795,8 +916,6 @@ footer.bottom {
 
     li:last-child a { margin: 0; }
 
-    // */
-
     .mobile-menu-btn {
       background: url(../img/icons.png) no-repeat -192px 0;
       display: block;
@@ -808,8 +927,27 @@ footer.bottom {
 
   }
 
+  .main-nav.sub-nav {
+     ul { width: 100%; }
+  }
+
   .content {
+    padding: 70px 0;
+  }
+
+  .work-content {
     padding: 30px 0;
+  }
+
+  .work-navigation { 
+    padding: 30px 0;
+    p,
+    p.align-left,
+    p.align-right { 
+      float: none;
+      padding: 10px 0; 
+      text-align: center;
+    }
   }
 
 }
@@ -834,6 +972,13 @@ footer.bottom {
     h3 { display: none; }
   }
 
+  .error {
+    .main-title {
+      h2,
+      h3 { display: block; }
+    }
+  }
+
   .mobile-hidden { display: inline; }
 
   .social {
@@ -843,13 +988,17 @@ footer.bottom {
 
   .work {
     
-    li {
-      width: 100%;
-      margin: 0 0 15px 0;
-    }
+    .worklist {
 
-    li:nth-child(2n) { margin-right: 0; }
-    li:nth-child(3n) { margin: 0 0 15px 0; }
+      li {
+        width: 100%;
+        margin: 0 0 15px 0;
+      }
+
+      li:nth-child(2n) { margin-right: 0; }
+      li:nth-child(3n) { margin: 0 0 15px 0; }
+
+    }
 
     blockquote { padding: 0 0 20px; }
 
@@ -860,7 +1009,7 @@ footer.bottom {
 
 @media screen and (max-width: 460px) {
 
-  header { padding: 20px 0 0; }
+  header.main-page  { padding: 20px 0 0; }
 
   .main-photo {
     height: 150px;
