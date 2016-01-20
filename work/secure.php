@@ -20,7 +20,7 @@
           <a class="view-site" href="http://secure.timrgeorge.com">View Demo Page</a>
         </article>
 
-        <a href="image-link" href="http://secure.timrgeorge.com"><img src="/assets/img/work_secure.jpg" alt="Secure Account Access Site" /></a>
+        <a class="image-link" href="http://secure.timrgeorge.com"><img src="/assets/img/work_secure.jpg" alt="Secure Account Access Site" /></a>
       </div>
 
     </article>

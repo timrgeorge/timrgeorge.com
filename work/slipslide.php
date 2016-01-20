@@ -18,7 +18,7 @@
           <a class="view-site" href="http://slipandslidekegger.com">View Site</a>
         </article>
 
-        <a href="image-link" href="http://slipandslidekegger.com"><img src="/assets/img/work_slide.jpg" alt="Secure Account Access Site" /></a>
+        <a class="image-link" href="http://slipandslidekegger.com"><img src="/assets/img/work_slide.jpg" alt="Secure Account Access Site" /></a>
       </div>
 
     </article>

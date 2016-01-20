@@ -1,6 +1,6 @@
 <?php include($_SERVER['DOCUMENT_ROOT'].'/inc/header.php'); ?>
 
-<header>
+<header class="main-page">
 
 <article class="error wrapper">
 <a class="main-title" href="/">

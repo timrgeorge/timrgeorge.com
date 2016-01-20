@@ -5,11 +5,12 @@
 
 </section>
 <?php } ?>
-
+<?php if($_SERVER['SCRIPT_NAME'] != "/404.php") { ?>
 <footer class="bottom clearfix">
 <?php include($_SERVER['DOCUMENT_ROOT'].'/inc/social.php'); ?>
 <p>&copy; <?php echo date("Y"); ?> Tim George</p>
 </footer>
+<?php } ?>
 
 </div>
 

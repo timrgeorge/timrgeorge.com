@@ -77,7 +77,7 @@
 <li><a href="music">Music</a></li>
 <li class="resume"><a class="resume" href="http://resume.timrgeorge.com">Resume</a></li>
 <?php } else { ?>
-<li><a href="/index">&laquo; Back</a></li>
+<?php if($_SERVER['SCRIPT_NAME'] != "/404.php") { ?><li><a href="/index">&laquo; Back</a></li><?php } ?>
 <li class="resume"><a class="resume" href="http://resume.timrgeorge.com">Resume</a></li>
 <?php } ?>
 </ul>
@@ -106,7 +106,7 @@
 </div>
 
 <div class="intro">
-<p>I'm<span class="mobile-hidden"> Tim George,</span> a Boston-based User Interface &amp; Web Developer, who is currently employed as the Managing UI/UX Architect at <a href="http://bostonfinancial.com">Boston Financial Data Services</a>.</p>
+<p>I'm<span class="mobile-hidden"> Tim George,</span> a Boston-based User Interface &amp; Web Developer, who is currently employed as a Senior Web Developer at <a href="http://www.eatonvance.com/">Eaton Vance</a>, and am currently becoming reacclimated to walking with both feet after a motorcycle accident.</p>
 </div>
 
 <footer class="clearfix">

@@ -411,7 +411,10 @@ header.main-page {
       span { font-weight: bold; }
     }
 
-    h3 { color: #fff; }
+    h3 { 
+      color: #fff;
+      @include transition(all,0.5s,ease);
+    }
 
     .ampersand { 
       display: inline-block;
@@ -429,7 +432,14 @@ header.main-page {
     p { text-align: center; }
   }
 
-    .main-title:hover { color: $light-blue; }
+    .main-title:hover { 
+      //color: $light-blue;
+      color: $teal;
+      h3 {
+        color: $orange;
+        //text-decoration: underline;
+      }
+    }
 
   .sub-title { 
     float: none;

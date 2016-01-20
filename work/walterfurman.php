@@ -18,7 +18,7 @@
           <a class="view-site" href="http://walterafurman.com/">View Site</a>
         </article>
 
-        <a href="image-link" href="http://walterafurman.com/"><img src="/assets/img/work_walter.jpg" alt="Walter A. Furman" /></a>
+        <a class="image-link" href="http://walterafurman.com/"><img src="/assets/img/work_walter.jpg" alt="Walter A. Furman" /></a>
       </div>
 
     </article>
