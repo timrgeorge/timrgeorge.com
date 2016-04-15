@@ -15,10 +15,10 @@
             <li><a href="http://modernizr.com/">Modernizr</a> / <a href="http://jquery.com/">jQuery</a></li>
             <li><a href="https://github.com/dan-coulter/phpflickr">phpflickr</a> / <a href="https://github.com/J7mbo/twitter-api-php">twitter-api-php</a></li>
           </ul>
-          <a class="view-site" href="http://slipandslidekegger.com">View Site</a>
+          <!--<a class="view-site" href="http://slipandslidekegger.com">View Site</a>-->
         </article>
 
-        <a class="image-link" href="http://slipandslidekegger.com"><img src="/assets/img/work_slide.jpg" alt="Secure Account Access Site" /></a>
+        <a class="image-link" href="javascript:void(0);"><img src="/assets/img/work_slide.jpg" alt="Secure Account Access Site" /></a>
       </div>
 
     </article>

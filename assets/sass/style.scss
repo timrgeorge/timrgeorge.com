@@ -210,7 +210,8 @@ textarea:-moz-placeholder { color:#a9a9a9; }
 -------------------------------------------------------------------------------*/
 
 body {
-  background: #dadada url(../img/greyzz.png);
+  //background: #dadada url(../img/greyzz.png);
+  background: #333333 url(../img/wild_oliva.png);
   //padding: 75px 0 0;
   position: relative;
 }
@@ -521,7 +522,7 @@ header.main-page {
   
 
   .work {
-
+    background: #dadada url(../img/greyzz.png);
     @include transition(all,0.3s,ease);
 
     .worklist {
@@ -584,7 +585,7 @@ header.main-page {
   }
 
   .work-content {
-
+    background: #dadada url(../img/greyzz.png);
     padding-bottom: 25px;
 
     .description {
@@ -666,6 +667,7 @@ header.main-page {
   }
 
   .music {
+    background: #dadada url(../img/greyzz.png);
     border-bottom: 0;
     p { text-align: center; }
     h2 { margin: 0 0 20px; }
