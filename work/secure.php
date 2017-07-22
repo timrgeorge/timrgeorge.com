@@ -1,13 +1,16 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/inc/header.php'); ?>
-    
-  <section class="work-content content clearfix">
-    <article class="wrapper">
+<?php require_once($_SERVER['DOCUMENT_ROOT'].'/inc/templates/header.php'); ?>
+
+<section id="work" class="work-content content clearfix">  
+  
+  <div class="wrapper">
+
+    <article id="secure">
 
       <h2>Secure Account Access Site</h2>
 
       <div class="clearfix">
-        <article class="description">
-          <p>Most of my work at <a href="http://bostonfinancial.com">Boston Financial Data Services, Inc.</a> revolves around Secure Account Access sites for our clients shareholders. </p>
+        <div class="description">
+          <p>Most of my work at <a href="http://bostonfinancial.com">Boston Financial Data Services, Inc.</a> revolved around Secure Account Access sites for their clients shareholders. </p>
           <p>During this project, I focused on architecting the UI &amp; UX for a new web platform we were building to tie into existing API's.</p>
           <p class="no-padding">Technologies, Libraries, &amp; Frameworks Used:</p>
           <ul>
@@ -18,18 +21,15 @@
           </ul>
           <p>Unfortunately, I cannot link to a working version of the site, but I do have a stand-alone, single page demo that you can view.</p>
           <a class="view-site" href="http://secure.timrgeorge.com">View Demo Page</a>
-        </article>
+        </div>
 
-        <a class="image-link" href="http://secure.timrgeorge.com"><img src="/assets/img/work_secure.jpg" alt="Secure Account Access Site" /></a>
+        <a class="image-link" href="http://secure.timrgeorge.com"><div class="work-content-overlay">View Demo Page</div><img src="/assets/img/work_secure.jpg" alt="Secure Account Access Site" /></a>
       </div>
 
     </article>
-  </section>
+  
+  </div>
 
-  <section class="work-navigation content clearfix">
-    <article class="wrapper">
-        <p class="align-right text-right"><a href="/work/slipslide">Slip &amp; Slide &rsaquo;</a></p>
-    </article>
-  </section>
+</section>
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/inc/footer.php'); ?>
+<?php require_once($_SERVER['DOCUMENT_ROOT'].'/inc/templates/footer.php'); ?>

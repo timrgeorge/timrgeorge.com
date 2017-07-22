@@ -1,4 +1,4 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/inc/functions.php'); ?>
+<?php require_once($_SERVER['DOCUMENT_ROOT'].'/inc/_functions.php'); ?>
 <!doctype html>
 
 <!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js" lang="en"> <![endif]-->
@@ -27,93 +27,47 @@
 <!-- ************************************************************************ -->
 
 <head>
-
 <meta charset="utf-8">
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Tim George - UI &amp; Web Developer</title>
 <meta name="author" content="Tim George" />
 <meta name="description" content="User Interface &amp; Web Developer. 80's Enthusiast. Lego-Builder. Tim often enjoys coding to Stan Bush's 'The Touch'." />
-
 <meta name="google-site-verification" content="jjAew9bmyHsT_U5BIFoSsjSd01R96zaSarkJjZJB894" />
-
 <meta name="Copyright" content="<?php echo date('Y')?> - Tim George" />
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <link rel="shortcut icon" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/assets/img/favicon.ico" />
 <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/assets/css/style.css" />
-
-<script src="http://<?php echo $_SERVER['SERVER_NAME']; ?>/assets/js/libs/modernizr-2.8.3.min.js"></script>
-
-<!-- Twitter: see https://dev.twitter.com/docs/cards/types/summary-card for details -->
+<script src="/assets/js/libs/modernizr-3.3.1.min.js"></script>
+<script src="/assets/js/libs/require.js" data-main="/assets/js/loader/functions"></script>
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@timrgeorge">
 <meta name="twitter:title" content="Tim George - UI &amp; Web Developer">
 <meta name="twitter:description" content="User Interface &amp; Web Developer. 80's Enthusiast. Lego-Builder. Tim often enjoys coding to Stan Bush's 'The Touch'.">
 <meta name="twitter:url" content="http://timrgeorge.com">
 <meta name="twitter:image" content="http://timrgeorge.com/assets/img/facebook_og.jpg" />
-<!-- Facebook (and some others) use the Open Graph protocol: see http://ogp.me/ for details -->
 <meta property="og:title" content="Tim George - UI &amp; Web Developer" />
 <meta property="og:description" content="User Interface &amp; Web Developer. 80's Enthusiast. Lego-Builder. Tim often enjoys coding to Stan Bush's 'The Touch'." />
 <meta property="og:url" content="http://timrgeorge.com" />
 <meta property="og:image" content="http://timrgeorge.com/assets/img/facebook_og.jpg" />
-
 </head>
 
 <body>
-
-<div class="nav-wrapper">
-<nav class="main-nav<?php if ($_SERVER['REQUEST_URI'] != "/") { ?> sub-nav<?php } ?> clearfix">
+  
+<div class="nav-container">
+<nav class="wrapper clearfix">
 <?php if ($_SERVER['REQUEST_URI'] == "/") { ?><a href="index"><?php } else { ?><a class="home" href="/index"><?php } ?><h2>Tim George</h2></a>
 <a class="mobile-menu-btn" href="hamburger">Menu Icon</a>
-<ul>
+<ul class="main-navigation">
 <?php if ($_SERVER['REQUEST_URI'] == "/") { ?>
 <li><a href="index">Home</a></li>
 <li><a href="work">Work</a></li>
 <li><a href="about">About</a></li>
 <li><a href="music">Music</a></li>
-<li class="resume"><a class="resume" href="http://resume.timrgeorge.com">Resume</a></li>
 <?php } else { ?>
-<?php if($_SERVER['SCRIPT_NAME'] != "/404.php") { ?><li><a href="/index">&laquo; Back</a></li><?php } ?>
-<li class="resume"><a class="resume" href="http://resume.timrgeorge.com">Resume</a></li>
+<li class="back-home"><a href="/index">&laquo; Home</a></li>
 <?php } ?>
+<li class="resume"><a class="resume" href="http://resume.timrgeorge.com">Resume</a></li>
 </ul>
 </nav>
 </div>
-
-<?php if ($_SERVER['REQUEST_URI'] == "/") { ?>
-<header class="main-page">
-<article class="wrapper">
-<div class="title-photo clearfix">
-<a itemscope itemtype="http://schema.org/Person" class="main-title" href="/">
-<link itemprop="url" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/" />
-<h1>Hi Friends</h1>
-<h2>I'm <span itemprop="name">Tim George</span><br /><span itemprop="jobTitle">User Interface <span class="ampersand">&amp;</span> Web Developer</span>.<br />80's Enthusiast.&nbsp;&nbsp;Lego-Builder.</h2>
-<h3><?php get_slogan(); ?></h3>
-</a>
-
-<div class="main-photo">
-<!-- ************************************************************** -->
-<!-- Yes, it's a photo of me, and when you hover over it            -->
-<!-- you are treated to an amazing animated gif. ENJOY YOUR REWARD. -->
-<!-- ************************************************************** -->
-<?php get_hover_photo(); ?>
-
-</div>
-</div>
-
-<div class="intro">
-<p>I'm<span class="mobile-hidden"> Tim George,</span> a Boston-based User Interface &amp; Web Developer, who is currently employed as a Senior Web Developer at <a href="http://www.eatonvance.com/">Eaton Vance</a>, and am currently becoming reacclimated to walking with both feet after a motorcycle accident.</p>
-</div>
-
-<footer class="clearfix">
-<?php include($_SERVER['DOCUMENT_ROOT'].'/inc/social.php'); ?>
-
-</footer>
-</header>
-
-<div class="main-content">
-<?php } ?>

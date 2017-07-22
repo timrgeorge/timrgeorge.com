@@ -1,7 +1,10 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/inc/header.php'); ?>
-    
-  <section class="work-content content clearfix">
-    <article class="wrapper">
+<?php require_once($_SERVER['DOCUMENT_ROOT'].'/inc/templates/header.php'); ?>
+
+<section id="work" class="work-content content clearfix">  
+  
+  <div class="wrapper">
+
+    <article id="walterafurman">
 
       <h2>Walter A. Furman</h2>
 
@@ -18,16 +21,13 @@
           <a class="view-site" href="http://walterafurman.com/">View Site</a>
         </article>
 
-        <a class="image-link" href="http://walterafurman.com/"><img src="/assets/img/work_walter.jpg" alt="Walter A. Furman" /></a>
+        <a class="image-link" href="http://walterafurman.com/"><div class="work-content-overlay">View Site</div><img src="/assets/img/work_walter.jpg" alt="Walter A. Furman" /></a>
       </div>
 
     </article>
-  </section>
 
-  <section class="work-navigation content clearfix">
-    <article class="wrapper">
-      <p class="align-left"><a href="/work/slipslide">&lsaquo; Slip &amp; Slide</a></p>
-    </article>
-  </section>
+  </div>
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/inc/footer.php'); ?>
+</section>
+
+<?php require_once($_SERVER['DOCUMENT_ROOT'].'/inc/templates/footer.php'); ?>

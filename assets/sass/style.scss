@@ -1,147 +1,46 @@
-/**
+/*!
  * timrgeorge.com
  * 
  * Author:    Tim George
- * Version:   1.0
+ * Version:   1.1
  *
- * Tiled Background Image:    http://subtlepatterns.com/
- * Google Fonts:              https://www.google.com/fonts/specimen/Titillium+Web
- * Animated gifs found via:   http://giphy.com/
- * Initial Templates:         https://github.com/murtaugh/HTML5-Reset
+ * Tiled Background Image     :: http://subtlepatterns.com/
+ * Google Fonts               :: https://www.google.com/fonts/specimen/Titillium+Web
+ * Animated gifs found        :: http://giphy.com/
+ * Initial Templates          :: https://github.com/murtaugh/HTML5-Reset
  *
  *
  * HTML5 Reset :: style.css
  * ----------------------------------------------------------  
  * We have learned much from/been inspired by/taken code where offered from:
  *
- * Eric Meyer          :: http://meyerweb.com
- * HTML5 Doctor        :: http://html5doctor.com
- * and the HTML5 Boilerplate :: http://html5boilerplate.com  
+ * Eric Meyer                 :: http://meyerweb.com
+ * HTML5 Doctor               :: http://html5doctor.com
+ * and the HTML5 Boilerplate  :: http://html5boilerplate.com  
+ *
+ *
+ * SASS :: style.css
+ * ----------------------------------------------------------  
+ * This CSS was written and compiled with SASS
+ * http://sass-lang.com/
+ *
 -------------------------------------------------------------------------------*/
 
-/* Let's default this puppy out
+
+
+/* RESET
 -------------------------------------------------------------------------------*/
+@import 'inc/reset';
 
-html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font-weight: normal;
-  vertical-align: baseline;
-  background: transparent;
-}
 
-article, aside, figure, footer, header, nav, section, details, summary {display: block;}
 
-html { box-sizing: border-box; }
-
-*, 
-*:before, 
-*:after {
-  box-sizing: inherit;
-}
-
-img,
-object,
-embed {max-width: 100%;}
-
-/* force a vertical scrollbar to prevent a jumpy page */
-html {overflow-y: scroll;}
-
-/* we use a lot of ULs that aren't bulleted. 
-  don't forget to restore the bullets within content. */
-ul {list-style: none;}
-
-blockquote, q {quotes: none;}
-
-blockquote:before, 
-blockquote:after, 
-q:before, 
-q:after {content: ''; content: none;}
-
-a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
-
-del {text-decoration: line-through;}
-
-abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
-
-/* tables still need cellspacing="0" in the markup */
-table {border-collapse: collapse; border-spacing: 0;}
-th {font-weight: bold; vertical-align: bottom;}
-td {font-weight: normal; vertical-align: top;}
-
-hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
-
-input, select {vertical-align: middle;}
-
-pre {
-    white-space: pre; /* CSS2 */
-    white-space: pre-wrap; /* CSS 2.1 */
-    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
-    word-wrap: break-word; /* IE */
-}
-
-input[type="radio"] {vertical-align: text-bottom;}
-input[type="checkbox"] {vertical-align: bottom;}
-.ie7 input[type="checkbox"] {vertical-align: baseline;}
-.ie6 input {vertical-align: text-bottom;}
-
-select, input, textarea {font: 99% sans-serif;}
-
-table {font-size: inherit; font: 100%;}
-
-small {font-size: 85%;}
-
-strong {font-weight: bold;}
-
-td, td img {vertical-align: top;} 
-
-/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
-sub, sup {font-size: 75%; line-height: 0; position: relative;}
-sup {top: -0.5em;}
-sub {bottom: -0.25em;}
-
-/* standardize any monospaced elements */
-pre, code, kbd, samp {font-family: monospace, sans-serif;}
-
-/* hand cursor on clickable elements */
-.clickable,
-label, 
-input[type=button], 
-input[type=submit], 
-input[type=file], 
-button {cursor: pointer;}
-
-/* Webkit browsers add a 2px margin outside the chrome of form elements */
-button, input, select, textarea {margin: 0;}
-
-/* make buttons play nice in IE */
-button,
-input[type=button] {width: auto; overflow: visible;}
- 
-/* scale images in IE7 more attractively */
-.ie7 img {-ms-interpolation-mode: bicubic;}
-
-/* prevent BG image flicker upon hover 
-   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
-.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
-*/
-
-/* let's clear some floats */
-.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
-.clearfix:after { clear: both; }  
-.clearfix { zoom: 1; }  
-
-.align-right { float: right; }
-.text-right { text-align: right; }
-.align-left { float: left; }
-.no-padding { padding: 0 !important; }
-
-/* Variables
+/* VARIABLES
 -------------------------------------------------------------------------------*/
-// COLORS FROM Aspirin-C theme via Kuler:
-// https://color.adobe.com/Aspirin-C-color-theme-251864/edit/?copy=true
+/**
+ *  Colors from Aspirin-C theme via Kuler:
+ *  https://color.adobe.com/Aspirin-C-color-theme-251864/edit/?copy=true
+ *
+ **/
 $dark-blue: #225378;
 $teal: #1695A3;
 $light-blue: #ACF0F2;
@@ -151,76 +50,70 @@ $orange: #EB7F00;
 $border-color: #bbb;
 
 
-/* Mixins
+
+/* MIXINS
 -------------------------------------------------------------------------------*/
 @mixin transition($transition, $length, $timing) {
-  -moz-transition:$transition $length $timing;
-  -o-transition:$transition $length $timing;
-  -webkit-transition:$transition $length $timing;
-  transition:$transition $length $timing;
+  -moz-transition:        $transition $length $timing;
+  -o-transition:          $transition $length $timing;
+  -webkit-transition:     $transition $length $timing;
+  transition:             $transition $length $timing;
 }
 
 @mixin gradient($top,$bottom) {
-  background: $bottom;
-  background: -moz-linear-gradient(top,  $top 0%, $bottom 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom));
-  background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%);
-  background: -o-linear-gradient(top,  $top 0%,$bottom 100%);
-  background: -ms-linear-gradient(top,  $top 0%,$bottom 100%);
-  background: linear-gradient(to bottom,  $top 0%,$bottom 100%);
+  background:             $bottom; /* old browsers */
+  background:             -webkit-linear-gradient($top,$bottom); /* Chrome 10-25, Safari 5.1-6 */
+  background:             linear-gradient($top,$bottom); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 @mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  border-radius: $radius;
+  -webkit-border-radius:  $radius;
+  -moz-border-radius:     $radius;
+  border-radius:          $radius;
 }
 
 @mixin transform($transformation) {
-  -ms-transform: $transformation;
-  -webkit-transform: $transformation;
-  -o-transition: $transformation;
-  transform: $transformation;
+  -ms-transform:          $transformation;
+  -webkit-transform:      $transformation;
+  -o-transition:          $transformation;
+  transform:              $transformation;
 }
 
 @mixin box-shadow($hshadow,$vshadow,$blur,$spread,$rgba-R,$rgba-G,$rgba-B,$rgba-A){
-  -webkit-box-shadow: $hshadow $vshadow $blur $spread rgba($rgba-R, $rgba-G, $rgba-B, $rgba-A);
-  -moz-box-shadow:    $hshadow $vshadow $blur $spread rgba($rgba-R, $rgba-G, $rgba-B, $rgba-A);
-  box-shadow:         $hshadow $vshadow $blur $spread rgba($rgba-R, $rgba-G, $rgba-B, $rgba-A);
+  -webkit-box-shadow:     $hshadow $vshadow $blur $spread rgba($rgba-R, $rgba-G, $rgba-B, $rgba-A);
+  -moz-box-shadow:        $hshadow $vshadow $blur $spread rgba($rgba-R, $rgba-G, $rgba-B, $rgba-A);
+  box-shadow:             $hshadow $vshadow $blur $spread rgba($rgba-R, $rgba-G, $rgba-B, $rgba-A);
 }
 
-body { font: 20px 'Titillium Web', Helmet, Freesans, sans-serif; }
+
+
+/* BASIC STYLES
+-------------------------------------------------------------------------------*/
+body {
+  background: #333333  url(../img/wild_oliva.png);
+  font: 20px 'Titillium Web', Helmet, Freesans, sans-serif;
+  position: relative;
+}
+
 body, select, input, textarea { color: #333; }
 
 a {color: $teal;}
 a:hover {color: $orange;}
 
-/*	j.mp/webkit-tap-highlight-color */
-//a:link {-webkit-tap-highlight-color: #fcd700;} 
-
 ins {background-color: #fcd700; color: #000; text-decoration: none;}
 mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: bold;}
 
-/* Mozilla dosen't style place holders by default */
+/* Mozilla dosen't style placeholders by default */
 input:-moz-placeholder { color:#a9a9a9; }
 textarea:-moz-placeholder { color:#a9a9a9; }
 
+.mobile-hidden { display: none; }
 
-/* Global styles
+
+
+/* GLOBAL STYLES
 -------------------------------------------------------------------------------*/
-
-body {
-  //background: #dadada url(../img/greyzz.png);
-  background: #333333 url(../img/wild_oliva.png);
-  //padding: 75px 0 0;
-  position: relative;
-}
-
-header article,
-.main-content { display: none; }
-
-.wrapper,
-.main-nav {
+.wrapper {
   margin: 0 auto;
   width: 980px;
   @include transition(all,0.2s,ease);
@@ -256,57 +149,69 @@ blockquote {
   line-height: 23px;
 }
 
+.custom-overlay {
+  background: #000;
+  display: none;
+  height: 100%;
+  opacity: 0.85;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9995;
+}
 
-/* Main navigation
+
+
+/* MAIN NAVIGATION
 -------------------------------------------------------------------------------*/
+.nav-container {
+  background: #dadada url(../img/greyzz.png);
+  border-top: 5px solid #333;
+  @include box-shadow(0,3px,10px,0,50,50,50,0.4);
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 9999;
 
-.mobile-hidden { display: none; }
-  
-  .nav-wrapper {
-    background: #dadada url(../img/greyzz.png);
-    backface-visibility: hidden;
-    border-top: 5px solid #333;
-    @include box-shadow(0,3px,10px,0,50,50,50,0.4);
-    padding: 10px 0 0;
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    z-index: 9999;
+  .mobile-menu-btn { display: none; }
+
+  a { text-decoration: none; }
+
+  h2 {
+    float: left;
+    display: block;
+    height: 70px;
+    line-height: 68px;
+    margin: 0;
+    @include transition(all,0.2s,ease);
   }
 
-  .main-nav {
-
-    //border-bottom: 1px dotted $border-color;
-    margin: 0 auto;
-
-    .mobile-menu-btn { display: none; }
-
-    h2 {
+  ul {
+    float: right;
+    
+    li {
       float: left;
-      margin: 8px 0 0;
-      @include transition(all,0.2s,ease);
+      
+      a {
+        display: block;
+        float: left;
+        line-height: 70px;
+        text-align: center;
+        text-decoration: none;
+        @include transition(all,0.2s,ease);
+        width: 80px;
+      }
+
+      a:hover {    
+        color: $orange;
+        text-decoration: underline;
+      }
+
     }
 
-      h2:hover { color: $orange; }
-
-    ul {
-      float: right;
-      height: 35px;
-      //width: 470px; // 90 * 4 + 100
-      // even need this? why did I do this?
-      //width: 290px;
-      //margin: 0 auto 30px;
-      margin: 10px 0 15px;      
-    }
-
-    li { 
-      float: left;
-      //margin: 0 0 0 20px;
-    }
-
-    li:first-child {
-      margin: 0;
-    }
+    li.back-home a { width: 95px; }
+    li.resume a { margin: 0 0 0 10px; }
 
     li:after {
       content: " /";
@@ -314,54 +219,80 @@ blockquote {
       display: inline-block;
       float: right;
       font-size: 20px;
+      line-height: 70px;
       text-align: center;
       width: 10px;
     }
 
-    li:last-child:after {
-      content: "";
-    }
+    li:last-child:after { content: ""; }
+  }
 
-    li a { 
+}
+
+
+
+/* MAIN HEADER
+-------------------------------------------------------------------------------*/
+
+.main-header {
+  color: #fff;
+  padding: 25vh 0 15px;
+  min-height: 100vh;
+
+  .title-and-photo {
+    margin: 0 0 60px;
+
+    .main-title { 
       color: $teal;
       display: block;
       float: left;
-      font-size: 20px;
-      //margin: 0 20px 0 0;
       text-align: center;
       text-decoration: none;
-      @include transition(all,0.2s,ease);
-      width: 80px;
+      margin: 15px 0 0;
+      @include transition(all,0.5s,ease);
+      width: 65%;
+
+      h1 { 
+        font-size: 75px;
+        letter-spacing: -4px;
+        line-height: 75px;
+        margin: 0 0 20px;
+        text-shadow: 0 -1px 0 #000;
+      }
+      
+      h2 { 
+        color: #fff;
+        letter-spacing: -1.5px;
+        margin: 0 0 20px;
+        text-transform: uppercase; 
+        span { font-weight: bold; }
+      }
+
+      h3 { 
+        color: #fff;
+        @include transition(all,0.5s,ease);
+      }
+
+      .ampersand { 
+        display: inline-block;
+        padding: 0 6px;
+      }
+
     }
 
-    li:last-child a { margin: 0; }
-
-    li a:hover {    
-      color: $orange;
-      text-decoration: underline;
+    .main-title:hover { 
+      color: $teal;
+      h3 { color: $orange; }
     }
 
-    li a.active { color: $orange; }
-
-    li.resume a { 
-      margin: 0 0 0 10px;
-      //width: 80px; 
-    }
   }
 
-  .main-nav.sub-nav {
-     ul { width: auto; }
-  }
-
-/* Header elements - Main title, sub-title, hero photo
--------------------------------------------------------------------------------*/
-
-header { 
-  background: url(../img/wild_oliva.png);
-  color: #fff;
-
-  .title-photo {
-    margin: 0 0 60px;
+  .title-and-photo.error {
+    .main-title {
+      margin-bottom: 35px;
+      width: 100%;
+    }
+    p { text-align: center; }
   }
 
   .intro {
@@ -369,335 +300,63 @@ header {
     margin: 0 0 10px;
     text-align: center;
 
-    p {
-      padding: 0 0 30px;
-    }
+    p { padding: 0 0 30px; }
 
     a { color: #fff; }
     a:hover { color: $orange; }
-
   }
 
 }
 
-header.main-page {
-  padding: 25vh 0 15px;
-  min-height: 100vh;
-}
 
-  .main-title,
-  .sub-title { 
-    color: $teal;
-    display: block;
-    float: left;
-    text-align: center;
-    text-decoration: none;
-    margin: 15px 0 0;
-    @include transition(all,0.5s,ease);
-    width: 65%;
 
-    h1 { 
-      font-size: 75px;
-      letter-spacing: -4px;
-      line-height: 75px;
-      margin: 0 0 20px;
-      text-shadow: 0 -1px 0 #000;
-    }
-    
-    h2 { 
-      color: #fff;
-      letter-spacing: -1.5px;
-      margin: 0 0 20px;
-      text-transform: uppercase; 
-      span { font-weight: bold; }
-    }
+/* MAIN PHOTO
+-------------------------------------------------------------------------------*/
+.main-photo {
+  background: #fff url(../img/tg_photo_2.jpg) no-repeat top center;
+  background-size: cover;
+  border: 2px solid #444;
+  @include border-radius(300px);
+  @include box-shadow(0,0,20px,0,0,0,0,0.50);
+  float: right;
+  height: 275px;
+  margin: 3px 8% 0 0;
+  opacity: 0.90;
+  overflow: hidden;
+  position: relative;
+  @include transition(all,0.5s,ease);
+  width: 27%;
 
-    h3 { 
-      color: #fff;
-      @include transition(all,0.5s,ease);
-    }
+  .knight-rider { background: url(../img/gif/knight_rider.gif) no-repeat top center; }
+  .mr-t { background: url(../img/gif/mr_t_shark_punch.gif) no-repeat top center; }
+  .bttf { background: url(../img/gif/bttf_1.gif) no-repeat top center; }    
+  .terminator-2 { background: url(../img/gif/terminator_2.gif) no-repeat -113px top; }
+  .ghostbusters { background: url(../img/gif/ghostbusters.gif) no-repeat -116px top; }
+  .predator { background: url(../img/gif/predator.gif) no-repeat center -20px; }
+  .top-gun { background: url(../img/gif/top_gun.gif) no-repeat -300px top; }
+  .indiana-jones { background: url(../img/gif/indiana_jones.gif) no-repeat -170px top; }
+  .die-hard { background: url(../img/gif/die_hard.gif) no-repeat -100px top; }
 
-    .ampersand { 
-      display: inline-block;
-      padding: 0 6px;
-    }
-
-  }
-
-  .error {
-    .main-title,
-    .sub-title { 
-      width: 100%;
-    }
-    .main-title { margin-bottom: 35px; }
-    p { text-align: center; }
-  }
-
-    .main-title:hover { 
-      //color: $light-blue;
-      color: $teal;
-      h3 {
-        color: $orange;
-        //text-decoration: underline;
-      }
-    }
-
-  .sub-title { 
-    float: none;
-    width: auto;
-    margin: 0;
-
-    h1 { 
-      float: left;
-      font-size: 60px;
-      letter-spacing: -3px;
-      line-height: 60px;
-      margin: 0;
-    }
-
-    h2 { 
-      float: right;
-      font-size: 22px;
-      letter-spacing: -1.5px;
-      line-height: 22px;
-      margin: 10px 0 0;
-    }
-
-  }
-
-  .main-photo {
-    background: #fff url(../img/tg_photo_2.jpg) no-repeat top center;
-    background-size: cover;
-    border: 2px solid #444;
+  .hover-photo {
+    background-size: cover; 
     @include border-radius(300px);
-    @include box-shadow(0,0,20px,0,0,0,0,0.50);
-    float: right;
     height: 275px;
-    margin: 3px 8% 0 0;
-    opacity: 0.90;
-    overflow: hidden;
-    position: relative;
-    @include transition(all,0.5s,ease);
-    width: 27%;
-
-    .knight-rider { background: url(../img/gif/knight_rider.gif) no-repeat top center; }
-    .mr-t { background: url(../img/gif/mr_t_shark_punch.gif) no-repeat top center; }
-    .bttf { background: url(../img/gif/bttf_1.gif) no-repeat top center; }    
-    .terminator-2 { background: url(../img/gif/terminator_2.gif) no-repeat -113px top; }
-    .ghostbusters { background: url(../img/gif/ghostbusters.gif) no-repeat -116px top; }
-    .predator { background: url(../img/gif/predator.gif) no-repeat center -20px; }
-    .top-gun { background: url(../img/gif/top_gun.gif) no-repeat -300px top; }
-    .indiana-jones { background: url(../img/gif/indiana_jones.gif) no-repeat -170px top; }
-    .die-hard { background: url(../img/gif/die_hard.gif) no-repeat -100px top; }
-
-    .hover-photo {
-      background-size: cover; 
-      @include border-radius(300px);
-      height: 275px;
-      opacity: 0;
-      text-indent: -9999px;
-      @include transition(all,0.75s,ease);
-    }
-
-    .hover-photo:hover { 
-      cursor: none;
-      opacity: 1; 
-    }
-
+    opacity: 0;
+    text-indent: -9999px;
+    @include transition(all,0.75s,ease);
   }
 
+  .hover-photo:hover { 
+    cursor: none;
+    opacity: 1; 
+  }
 
-/* Content styles
+}
+
+
+
+/* SOCIAL MEDIA ICONS STYLES
 -------------------------------------------------------------------------------*/
-
-.content {
-  padding: 110px 0;
-  h2 { text-align: center; }
-}
-
-  .content.music { 
-    min-height: 0; 
-    padding: 70px 0;
-  }
-  
-
-  .work {
-    background: #dadada url(../img/greyzz.png);
-    @include transition(all,0.3s,ease);
-
-    .worklist {
-
-      li {
-        background: #fff;
-        border: 1px solid #ccc;
-        border-bottom: 2px solid #999;
-        @include border-radius(5px);
-        display: block;
-        float: left;
-        height: 200px;
-        margin: 0 2% 20px 0;
-        //opacity: 0.5;
-        padding: 10px;
-        //@include transition(all,0.3s,ease);
-        width: 32%;
-
-        a {
-          background-image: none;
-          color: #fff;
-          display: block;
-          font-size: 23px;
-          font-weight: bold;
-          height: 178px;
-          line-height: 23px;
-          overflow: hidden;
-          padding: 75px 0 0;
-          text-indent: -700px;
-          text-align: center;
-          text-decoration: none;
-          @include transition(all,0.7s,ease);
-        }
-
-        a:hover {
-          text-indent: 0;
-          background-image: url(../img/alpha.png);
-        }
-
-        .work-item { background: url(../img/work_sprite.jpg) no-repeat top center; }
-        .work-item.slipslide {  background-position: center -200px;  }
-        .work-item.walter { background-position: center -400px; }
-
-      }
-      
-      li:hover { 
-        //opacity: 1; 
-      }
-      
-      li:nth-child(3n) { margin: 0; }
-
-    }
-
-    blockquote {
-      color: #666;
-      padding: 0 12% 20px;
-      text-align: center;
-    }
-
-  }
-
-  .work-content {
-    background: #dadada url(../img/greyzz.png);
-    padding-bottom: 25px;
-
-    .description {
-      float: left;
-      width: 58%;
-    }
-
-    ul {
-      margin: 5px 0 20px 35px;
-      li { list-style-type: disc; }
-    }
-
-    img {
-      background: #fff;
-      border: 1px solid #ccc;
-      border-bottom: 2px solid #999;
-      @include border-radius(5px);
-      float: right;
-      padding: 10px;
-      width: 38%;
-    }
-
-    a.view-site {
-      background: $teal;
-      color: #fff;
-      display: inline-block;
-      margin: 10px 0 15px;
-      padding: 5px 20px;
-      text-decoration: none;
-      @include transition(all,0.3s,ease);
-    }
-
-    a.view-site:hover { background: $orange; }
-
-  }
-
-  .work-navigation { 
-    padding: 75px 0; 
-    p { 
-      padding: 0; 
-      a { color: #fff; }
-    }
-  }
-
-  .work-navigation,
-  .about {
-    background: url(../img/blue_bg_2.jpg);
-    color: #fff; 
-  }
-
-  .about {
-
-    h2 { 
-      letter-spacing: -1px; 
-      text-shadow: 0 -1px 0 #000;
-    }
-
-    a { color: $orange; }
-    a:hover { color: #fff; }
-    
-    .about-text {
-      float: left;
-      width: 77%;
-    }
-
-    .about-photo {
-      background: url(../img/tg_ruckus_run_2.jpg) no-repeat top center;
-      background-size: cover;
-      border: 1px solid #999;
-      border-bottom: 2px solid #666;
-      @include border-radius(5px);
-      float: right;
-      height: 440px;
-      margin: 5px 0 0;
-      opacity: 0.75;
-      width: 20%;
-    }
-
-  }
-
-  .music {
-    background: #dadada url(../img/greyzz.png);
-    border-bottom: 0;
-    p { text-align: center; }
-    h2 { margin: 0 0 20px; }
-  }
-
-
-  #overlay { display: none; }
-
-
-
-/* Footer Styles
--------------------------------------------------------------------------------*/
-
-footer {
-  padding: 30px 0;
-
-  p {
-    clear: both;
-    color: #eee;
-    font-size: 15px;
-    padding: 50px 0 0;
-    text-align: center;
-  }
-}
-
-footer.bottom {
-  background: url(../img/wild_oliva.png);
-  padding: 50px 0 100px;
-}
-
 .social {
   width: 276px; /* 192 + 84 (14*6) */
   margin: 0 auto;
@@ -733,11 +392,223 @@ footer.bottom {
 
 }
 
-/* Media queries
--------------------------------------------------------------------------------*/
 
+
+/* GENERIC CONTENT SECTION STYLES
+-------------------------------------------------------------------------------*/
+.content {
+  padding: 110px 0;
+  h2 { text-align: center; }
+}
+
+
+
+/* WORK SECTION STYLES
+-------------------------------------------------------------------------------*/
+.work,
+.work-content {
+  background: #dadada url(../img/greyzz.png);
+}
+
+.work {  
+  @include transition(all,0.3s,ease);
+
+  .worklist {
+
+    li {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-bottom: 2px solid #999;
+      @include border-radius(5px);
+      display: block;
+      float: left;
+      height: 200px;
+      margin: 0 2% 20px 0;
+      padding: 10px;
+      width: 32%;
+
+      a {
+        background-image: none;
+        color: #fff;
+        display: block;
+        font-size: 23px;
+        font-weight: bold;
+        height: 178px;
+        line-height: 23px;
+        overflow: hidden;
+        padding: 75px 0 0;
+        text-indent: -700px;
+        text-align: center;
+        text-decoration: none;
+        @include transition(all,0.7s,ease);
+      }
+
+      a:hover {
+        text-indent: 0;
+        background-image: url(../img/alpha.png);
+      }
+
+      .work-item { background: url(../img/work_sprite.jpg) no-repeat top center; }
+      .work-item.slipslide {  background-position: center -200px;  }
+      .work-item.walter { background-position: center -400px; }
+
+    }
+    
+    li:nth-child(3n) { margin: 0; }
+
+  }
+
+  blockquote {
+    color: #666;
+    padding: 0 12% 20px;
+    text-align: center;
+  }
+
+}
+
+
+
+/* WORK CONTENT SECTION STYLES
+-------------------------------------------------------------------------------*/
+.work-content {
+  
+  article {
+    // border-top: 1px dotted #ccc;
+    // padding: 110px 0;
+
+    .description {
+      float: left;
+      width: 58%;
+
+      ul {
+        margin: 5px 0 20px 35px;
+        li { list-style-type: disc; }
+      }
+    
+    }
+
+    a.view-site {
+      background: $teal;
+      color: #fff;
+      display: inline-block;
+      margin: 10px 0 15px;
+      padding: 5px 20px;
+      text-decoration: none;
+      @include transition(all,0.3s,ease);
+    }
+
+    a.view-site:hover { background: $orange; }
+
+    a.image-link {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-bottom: 2px solid #999;
+      @include border-radius(5px);
+      display: block;
+      float: right;
+      overflow: hidden;
+      padding: 10px;
+      position: relative;
+      width: 38%;
+
+      .work-content-overlay {
+        background-image: url(../img/alpha.png);
+        @include border-radius(5px);
+        color: #fff;
+        font-weight: 700;
+        height: 100%;
+        left: -100%;
+        padding: 47% 0 0 0;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        @include transition(all,0.3s,ease);
+        width: 100%;        
+      }
+    }
+
+    a.image-link:hover {
+      .work-content-overlay {
+        left: 0;
+      }
+    }
+
+  }
+
+}
+
+
+
+/* ABOUT SECTION STYLES
+-------------------------------------------------------------------------------*/
+.about {
+  background: url(../img/blue_bg_2.jpg);
+  color: #fff; 
+
+  h2 { 
+    letter-spacing: -1px; 
+    text-shadow: 0 -1px 0 #000;
+  }
+
+  a { color: $orange; }
+  a:hover { color: #fff; }
+  
+  .about-text {
+    float: left;
+    width: 77%;
+  }
+
+  .about-photo {
+    background: url(../img/tg_ruckus_run_2.jpg) no-repeat top center;
+    background-size: cover;
+    border: 1px solid #999;
+    border-bottom: 2px solid #666;
+    @include border-radius(5px);
+    float: right;
+    height: 315px;
+    margin: 5px 0 0;
+    opacity: 0.75;
+    width: 20%;
+  }
+
+}
+
+
+
+/* MUSIC SECTION STYLES
+-------------------------------------------------------------------------------*/
+.music {
+  background: #dadada url(../img/greyzz.png);
+  border-bottom: 0;
+  p { text-align: center; }
+  h2 { margin: 0 0 20px; }
+}
+
+
+
+/* FOOTER STYLES
+-------------------------------------------------------------------------------*/
+footer {
+  padding: 30px 0;
+
+  p {
+    clear: both;
+    color: #eee;
+    font-size: 15px;
+    padding: 50px 0 0;
+    text-align: center;
+  }
+}
+
+footer.bottom {
+  padding: 50px 0 100px;
+}
+
+
+/* MEDIA QUERIES
+-------------------------------------------------------------------------------*/
 @media screen and (max-width: 1050px) {
-	
+  
   h1 {
     font-size: 80px;
     line-height: 80px;
@@ -749,16 +620,15 @@ footer.bottom {
     letter-spacing: -1.5px;
   }
 
-  .wrapper,
-  .main-nav { width: 95%; }
+  .wrapper { width: 95%; }
 
-  .main-nav {
-    h2 { margin: 14px 0 0; }
-  }
-
-  .main-title {
-    margin: 0;
-    h2 { margin: 0 0 5px; }
+  .main-header {
+    .title-and-photo {
+      .main-title { 
+        margin: 0;
+        h2 { margin: 0 0 5px; }
+      }
+    }
   }
 
   .main-photo {
@@ -776,193 +646,167 @@ footer.bottom {
     .die-hard { background-position: -70px top; }
   }
 
-  .work-content { 
-
-    .description { 
-      float: none;
-      width: auto;
-    }
-
-    img {
-      display: none;
-    }
-
-    a.view-site {
-      display: block;
-      margin: 10px auto 15px;
-      text-align: center;
-      width: 200px;
-    }
-
-  }
-
   .about {
-
     .about-text {
       float: none;
       width: auto;
     }
-
     .about-photo { display: none; }
+  }
+
+  .work-content {
+  
+    article {
+      border-top: 1px dotted #ccc;
+      padding: 110px 0;
+
+      .description {
+        float: none;
+        width: auto;
+      }
+
+      a.image-link {
+        display: none;
+      }
+
+      a.view-site {
+        display: block;
+        margin: 10px auto 15px;
+        text-align: center;
+        width: 200px;
+      }
+
+    }
 
   }
 
   footer { padding: 20px 0; }
-		
+
 }
+
 
 
 @media screen and (max-width: 860px) {
 
-  .main-title {
-    float: none;
-    margin: 0;
-    width: auto;
-    h2 { margin: 0 0 10px; }
-    h3 { margin: 0 0 15px; }
-  }
-
-  header.main-page { 
-
-    padding: 105px 0 10px;   
+  .main-header {
+    padding: 105px 0 10px;
 
     .clearfix { margin: 0 0 20px; }
-    .intro {
-      p { padding: 0; }
-    }
-    footer.clearfix { margin: 0 0 30px; }
-  }
+    
+    .intro { 
+      p { padding: 0; } 
+    }   
 
-  .main-photo {
-    float: none;    
-    margin: 0 auto;
-    position: static;
+    .title-and-photo {
+      .main-title {
+        float: none;
+        margin: 0;
+        width: auto;
+        h2 { margin: 0 0 10px; }
+        h3 { margin: 0 0 15px; }
+      }
+      .main-photo {
+        float: none;    
+        margin: 0 auto;
+        position: static;
+      }
+    }
+
+    footer.clearfix { margin: 0 0 30px; }
   }
 
 }
 
+
+
 @media screen and (max-width: 730px) {
 
-  .sub-title { 
-    text-align: center;
-
-    h1, 
-    h2 { 
-      float: none;      
-    }
-
-  }
-
-  .work {
-    
+  .work {    
     .worklist {
       li {
         width: 48%;
         margin: 0 4% 20px 0;
       }
-
       li:nth-child(2n) { margin-right: 0 !important; }
       li:nth-child(3n) { margin: 0 4% 20px 0; }
     }
-
   }
 
 }
 
 
+
 @media screen and (max-width: 640px) {
 
-  body { padding: 40px 0 0; }
-
-  .main-nav {
+  .nav-container {
     background: #444;
-    border: 0;
-    border-top: 5px solid #333;
     height: 40px;
-    margin: 0 0 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 9998;
 
     h2 { display: none; }
 
     ul {
       background: #333;
       display: none;
-      height: auto;
-      margin: 0;
+      float: none;
       position: fixed;
       top: 40px;
-      @include transition(all,0.2s,ease);
-      width: 100%;      
-      z-index: 9999;
+      width: 100%;
+
+      li { 
+        border-bottom: 1px solid #666;
+        float: none;
+        margin: 0;
+      }
+
+      li:first-child {
+        margin: 0;
+      }
+
+      li:after { 
+        content: "";
+      }
+
+      li a { 
+        color: #fff;
+        float: none;
+        font-weight: bold;
+        line-height: normal;
+        margin: 0;
+        padding: 10px 0;
+        text-align: center;
+        text-transform: uppercase;
+        width: auto;
+      }
+
+        li a:hover { text-decoration: none; }
+
+      li:last-child a { margin: 0; }
+
+      li.back-home a { width: auto; }
+
     }
 
-    li { 
-      border-bottom: 1px solid #666;
-      float: none;
-      margin: 0;
-    }
-
-    li:first-child {
-      margin: 0;
-    }
-
-    li:after { 
-      content: "";
-    }
-
-    li a { 
-      color: #fff;
-      float: none;
-      font-weight: bold;
-      margin: 0;
-      padding: 10px 0;
-      text-align: center;
-      text-transform: uppercase;
-      width: auto;
-    }
-
-      li a:hover { text-decoration: none; }
-
-    li:last-child a { margin: 0; }
+    nav.wrapper { width: 100%; }
 
     .mobile-menu-btn {
       background: url(../img/icons.png) no-repeat -192px 0;
       display: block;
       height: 25px;
-      margin: 5px 0 0 5px;
+      margin: 5px 0 0 2.5%;
       text-indent: -9999px;
       width: 25px;
     }
 
   }
 
-  .main-nav.sub-nav {
-     ul { width: 100%; }
+  .main-header {
+    padding: 60px 0 10px;
   }
 
-  .content {
-    padding: 70px 0;
-  }
-
-  .work-content {
-    padding: 30px 0;
-  }
-
-  .work-navigation { 
-    padding: 30px 0;
-    p,
-    p.align-left,
-    p.align-right { 
-      float: none;
-      padding: 10px 0; 
-      text-align: center;
-    }
-  }
+  .content { padding: 70px 0; }
 
 }
+
 
 
 @media screen and (max-width: 520px) {
@@ -972,22 +816,18 @@ footer.bottom {
     line-height: 60px;
   }
 
-  .main-title {
-    h1 {
-      font-size: 60px;
-      line-height: 60px;
-    }
-  }
-  
-  .main-title { 
-    h2,
-    h3 { display: none; }
-  }
 
-  .error {
-    .main-title {
-      h2,
-      h3 { display: block; }
+  .main-header {
+    .title-and-photo {
+      .main-title { 
+        h1 {
+          font-size: 60px;
+          line-height: 60px;
+        }
+
+        h2,
+        h3 { display: none; }
+      }
     }
   }
 
@@ -1019,9 +859,8 @@ footer.bottom {
 }
 
 
-@media screen and (max-width: 460px) {
 
-  header.main-page  { padding: 20px 0 0; }
+@media screen and (max-width: 460px) {
 
   .main-photo {
     height: 150px;
@@ -1035,50 +874,5 @@ footer.bottom {
     .indiana-jones { background-position: -90px top; }
     .die-hard { background-position: -50px top; }
   }
-
-  .sub-title { 
-    
-    h2 { display: none; }
-
-  }
-
-
-}
-
-
-@media screen and (max-width: 400px) {
-  /*.main-nav { display: none; }*/
-
-  /*.main-nav {
-
-    border-bottom:  0;
-
-    ul {
-      height: auto;
-      width: auto;
-      margin: 0;
-    }
-
-    li { 
-      float: none;
-      margin: 0;
-    }
-
-    li:first-child {
-      margin: 0;
-    }
-
-    li:after { content: ""; }
-
-    li a { 
-      float: none;
-      margin: 0;
-      text-align: left;
-      width: auto;
-    }
-
-    li:last-child a { margin: 0; }
-
-  }*/
 
 }
