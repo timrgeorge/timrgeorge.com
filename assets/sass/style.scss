@@ -1,0 +1,879 @@
+/*!
+ * timrgeorge.com
+ * 
+ * Author:    Tim George
+ * Version:   1.1
+ *
+ * Tiled Background Image     :: http://subtlepatterns.com/
+ * Google Fonts               :: https://www.google.com/fonts/specimen/Titillium+Web
+ * Animated gifs found        :: http://giphy.com/
+ * Initial Templates          :: https://github.com/murtaugh/HTML5-Reset
+ *
+ *
+ * HTML5 Reset :: style.css
+ * ----------------------------------------------------------  
+ * We have learned much from/been inspired by/taken code where offered from:
+ *
+ * Eric Meyer                 :: http://meyerweb.com
+ * HTML5 Doctor               :: http://html5doctor.com
+ * and the HTML5 Boilerplate  :: http://html5boilerplate.com  
+ *
+ *
+ * SASS :: style.css
+ * ----------------------------------------------------------  
+ * This CSS was written and compiled with SASS
+ * http://sass-lang.com/
+ *
+-------------------------------------------------------------------------------*/
+
+
+
+/* RESET
+-------------------------------------------------------------------------------*/
+@import 'inc/reset';
+
+
+
+/* VARIABLES
+-------------------------------------------------------------------------------*/
+/**
+ *  Colors from Aspirin-C theme via Kuler:
+ *  https://color.adobe.com/Aspirin-C-color-theme-251864/edit/?copy=true
+ *
+ **/
+$dark-blue: #225378;
+$teal: #1695A3;
+$light-blue: #ACF0F2;
+$light-green: #F3FFE2;
+$orange: #EB7F00;
+
+$border-color: #bbb;
+
+
+
+/* MIXINS
+-------------------------------------------------------------------------------*/
+@mixin transition($transition, $length, $timing) {
+  -moz-transition:        $transition $length $timing;
+  -o-transition:          $transition $length $timing;
+  -webkit-transition:     $transition $length $timing;
+  transition:             $transition $length $timing;
+}
+
+@mixin gradient($top,$bottom) {
+  background:             $bottom; /* old browsers */
+  background:             -webkit-linear-gradient($top,$bottom); /* Chrome 10-25, Safari 5.1-6 */
+  background:             linear-gradient($top,$bottom); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius:  $radius;
+  -moz-border-radius:     $radius;
+  border-radius:          $radius;
+}
+
+@mixin transform($transformation) {
+  -ms-transform:          $transformation;
+  -webkit-transform:      $transformation;
+  -o-transition:          $transformation;
+  transform:              $transformation;
+}
+
+@mixin box-shadow($hshadow,$vshadow,$blur,$spread,$rgba-R,$rgba-G,$rgba-B,$rgba-A){
+  -webkit-box-shadow:     $hshadow $vshadow $blur $spread rgba($rgba-R, $rgba-G, $rgba-B, $rgba-A);
+  -moz-box-shadow:        $hshadow $vshadow $blur $spread rgba($rgba-R, $rgba-G, $rgba-B, $rgba-A);
+  box-shadow:             $hshadow $vshadow $blur $spread rgba($rgba-R, $rgba-G, $rgba-B, $rgba-A);
+}
+
+
+
+/* BASIC STYLES
+-------------------------------------------------------------------------------*/
+body {
+  background: #333333  url(../img/wild_oliva.png);
+  font: 20px 'Titillium Web', Helmet, Freesans, sans-serif;
+  position: relative;
+}
+
+body, select, input, textarea { color: #333; }
+
+a {color: $teal;}
+a:hover {color: $orange;}
+
+ins {background-color: #fcd700; color: #000; text-decoration: none;}
+mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: bold;}
+
+/* Mozilla dosen't style placeholders by default */
+input:-moz-placeholder { color:#a9a9a9; }
+textarea:-moz-placeholder { color:#a9a9a9; }
+
+.mobile-hidden { display: none; }
+
+
+
+/* GLOBAL STYLES
+-------------------------------------------------------------------------------*/
+.wrapper {
+  margin: 0 auto;
+  width: 980px;
+  @include transition(all,0.2s,ease);
+}
+
+h1 {
+  font-size: 100px;
+  font-weight: bold;
+  line-height: 100px;
+  margin: 0 0 20px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: -2px;
+  line-height: 30px;
+  margin: 0 0 30px;
+}
+
+h3 {
+  font-size: 25px;
+  color: #777;
+}
+
+p {
+  line-height: 130%;
+  padding: 0 0 20px;
+}
+
+blockquote {
+  font-size: 17px;
+  line-height: 23px;
+}
+
+.custom-overlay {
+  background: #000;
+  display: none;
+  height: 100%;
+  opacity: 0.85;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9995;
+}
+
+
+
+/* MAIN NAVIGATION
+-------------------------------------------------------------------------------*/
+.nav-container {
+  background: #dadada url(../img/greyzz.png);
+  border-top: 5px solid #333;
+  @include box-shadow(0,3px,10px,0,50,50,50,0.4);
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 9999;
+
+  .mobile-menu-btn { display: none; }
+
+  a { text-decoration: none; }
+
+  h2 {
+    float: left;
+    display: block;
+    height: 70px;
+    line-height: 68px;
+    margin: 0;
+    @include transition(all,0.2s,ease);
+  }
+
+  ul {
+    float: right;
+    
+    li {
+      float: left;
+      
+      a {
+        display: block;
+        float: left;
+        line-height: 70px;
+        text-align: center;
+        text-decoration: none;
+        @include transition(all,0.2s,ease);
+        width: 80px;
+      }
+
+      a:hover {    
+        color: $orange;
+        text-decoration: underline;
+      }
+
+    }
+
+    li.back-home a { width: 95px; }
+    li.resume a { margin: 0 0 0 10px; }
+
+    li:after {
+      content: " /";
+      color: #000;
+      display: inline-block;
+      float: right;
+      font-size: 20px;
+      line-height: 70px;
+      text-align: center;
+      width: 10px;
+    }
+
+    li:last-child:after { content: ""; }
+  }
+
+}
+
+
+
+/* MAIN HEADER
+-------------------------------------------------------------------------------*/
+
+.main-header {
+  color: #fff;
+  padding: 25vh 0 15px;
+  min-height: 100vh;
+
+  .title-and-photo {
+    margin: 0 0 60px;
+
+    .main-title { 
+      color: $teal;
+      display: block;
+      float: left;
+      text-align: center;
+      text-decoration: none;
+      margin: 15px 0 0;
+      @include transition(all,0.5s,ease);
+      width: 65%;
+
+      h1 { 
+        font-size: 75px;
+        letter-spacing: -4px;
+        line-height: 75px;
+        margin: 0 0 20px;
+        text-shadow: 0 -1px 0 #000;
+      }
+      
+      h2 { 
+        color: #fff;
+        letter-spacing: -1.5px;
+        margin: 0 0 20px;
+        text-transform: uppercase; 
+        span { font-weight: bold; }
+      }
+
+      h3 { 
+        color: #fff;
+        font-style: italic;
+        @include transition(all,0.5s,ease);
+      }
+
+      .ampersand { 
+        display: inline-block;
+        padding: 0 6px;
+      }
+
+    }
+
+    .main-title:hover { 
+      color: $teal;
+      h3 { color: $orange; }
+    }
+
+  }
+
+  .title-and-photo.error {
+    .main-title {
+      margin-bottom: 35px;
+      width: 100%;
+    }
+    p { text-align: center; }
+  }
+
+  .intro {
+    padding: 0 10%;
+    margin: 0 0 10px;
+    text-align: center;
+
+    p { padding: 0 0 30px; }
+
+    a { color: #fff; }
+    a:hover { color: $orange; }
+  }
+
+}
+
+
+
+/* MAIN PHOTO
+-------------------------------------------------------------------------------*/
+.main-photo {
+  background: #fff url(../img/tg_photo_2.jpg) no-repeat top center;
+  background-size: cover;
+  border: 2px solid #444;
+  @include border-radius(300px);
+  @include box-shadow(0,0,20px,0,0,0,0,0.50);
+  float: right;
+  height: 275px;
+  margin: 3px 8% 0 0;
+  opacity: 0.90;
+  overflow: hidden;
+  position: relative;
+  @include transition(all,0.5s,ease);
+  width: 27%;
+
+  .knight-rider { background: url(../img/gif/knight_rider.gif) no-repeat top center; }
+  .mr-t { background: url(../img/gif/mr_t_shark_punch.gif) no-repeat top center; }
+  .bttf { background: url(../img/gif/bttf_1.gif) no-repeat top center; }    
+  .terminator-2 { background: url(../img/gif/terminator_2.gif) no-repeat -113px top; }
+  .ghostbusters { background: url(../img/gif/ghostbusters.gif) no-repeat -116px top; }
+  .predator { background: url(../img/gif/predator.gif) no-repeat center -20px; }
+  .top-gun { background: url(../img/gif/top_gun.gif) no-repeat -300px top; }
+  .indiana-jones { background: url(../img/gif/indiana_jones.gif) no-repeat -170px top; }
+  .die-hard { background: url(../img/gif/die_hard.gif) no-repeat -100px top; }
+
+  .hover-photo {
+    background-size: cover; 
+    @include border-radius(300px);
+    height: 275px;
+    opacity: 0;
+    text-indent: -9999px;
+    @include transition(all,0.75s,ease);
+  }
+
+  .hover-photo:hover { 
+    cursor: none;
+    opacity: 1; 
+  }
+
+}
+
+
+
+/* SOCIAL MEDIA ICONS STYLES
+-------------------------------------------------------------------------------*/
+.social {
+  width: 138px;
+  margin: 0 auto;
+
+  li { 
+    background: #000;
+    @include border-radius(3px);
+    float: left; 
+    margin: 0 7px;   
+    opacity: 0.5;
+    @include transition(all,0.3s,ease);
+  }
+
+  li:hover {
+    background: $teal;
+    opacity: 1;
+  }
+
+  li a {
+    background: url(../img/icons.png) no-repeat top left;   
+    display: block;
+    float: left;
+    height: 32px;
+    text-indent: -9999px;
+    width: 32px;
+  }
+
+  .twitter { background-position: -160px 0; }
+  .github { background-position: -32px 0; }
+  .linkedin { background-position: -128px 0; }
+  .lastfm { background-position: -96px 0; }
+  .instagram { background-position: -64px 0; }
+
+}
+
+
+
+/* GENERIC CONTENT SECTION STYLES
+-------------------------------------------------------------------------------*/
+.content {
+  padding: 110px 0;
+  h2 { text-align: center; }
+}
+
+
+
+/* WORK SECTION STYLES
+-------------------------------------------------------------------------------*/
+.work,
+.work-content {
+  background: #dadada url(../img/greyzz.png);
+}
+
+.work {  
+  @include transition(all,0.3s,ease);
+
+  .worklist {
+
+    li {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-bottom: 2px solid #999;
+      @include border-radius(5px);
+      display: block;
+      float: left;
+      height: 200px;
+      margin: 0 2% 20px 0;
+      padding: 10px;
+      width: 32%;
+
+      a {
+        background-image: none;
+        color: #fff;
+        display: block;
+        font-size: 23px;
+        font-weight: bold;
+        height: 178px;
+        line-height: 23px;
+        overflow: hidden;
+        padding: 75px 0 0;
+        text-indent: -700px;
+        text-align: center;
+        text-decoration: none;
+        @include transition(all,0.7s,ease);
+      }
+
+      a:hover {
+        text-indent: 0;
+        background-image: url(../img/alpha.png);
+      }
+
+      .work-item { background: url(../img/work_sprite.jpg) no-repeat top center; }
+      .work-item.slipslide {  background-position: center -200px;  }
+      .work-item.walter { background-position: center -400px; }
+
+    }
+    
+    li:nth-child(3n) { margin: 0; }
+
+  }
+
+  blockquote {
+    color: #666;
+    padding: 0 12% 20px;
+    text-align: center;
+  }
+
+}
+
+
+
+/* WORK CONTENT SECTION STYLES
+-------------------------------------------------------------------------------*/
+.work-content {
+  
+  article {
+    // border-top: 1px dotted #ccc;
+    // padding: 110px 0;
+
+    .description {
+      float: left;
+      width: 58%;
+
+      ul {
+        margin: 5px 0 20px 35px;
+        li { list-style-type: disc; }
+      }
+    
+    }
+
+    a.view-site {
+      background: $teal;
+      color: #fff;
+      display: inline-block;
+      margin: 10px 0 15px;
+      padding: 5px 20px;
+      text-decoration: none;
+      @include transition(all,0.3s,ease);
+    }
+
+    a.view-site:hover { background: $orange; }
+
+    a.image-link {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-bottom: 2px solid #999;
+      @include border-radius(5px);
+      display: block;
+      float: right;
+      overflow: hidden;
+      padding: 10px;
+      position: relative;
+      width: 38%;
+
+      .work-content-overlay {
+        background-image: url(../img/alpha.png);
+        @include border-radius(5px);
+        color: #fff;
+        font-weight: 700;
+        height: 100%;
+        left: -100%;
+        padding: 47% 0 0 0;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        @include transition(all,0.3s,ease);
+        width: 100%;        
+      }
+    }
+
+    a.image-link:hover {
+      .work-content-overlay {
+        left: 0;
+      }
+    }
+
+  }
+
+}
+
+
+
+/* ABOUT SECTION STYLES
+-------------------------------------------------------------------------------*/
+.about {
+  background: url(../img/blue_bg_2.jpg);
+  color: #fff; 
+
+  h2 { 
+    letter-spacing: -1px; 
+    text-shadow: 0 -1px 0 #000;
+  }
+
+  a { color: $orange; }
+  a:hover { color: #fff; }
+  
+  .about-text {
+    float: left;
+    width: 77%;
+  }
+
+  .about-photo {
+    background: url(../img/tg_ruckus_run_2.jpg) no-repeat top center;
+    background-size: cover;
+    border: 1px solid #999;
+    border-bottom: 2px solid #666;
+    @include border-radius(5px);
+    float: right;
+    height: 315px;
+    margin: 5px 0 0;
+    opacity: 0.75;
+    width: 20%;
+  }
+
+}
+
+
+
+/* MUSIC SECTION STYLES
+-------------------------------------------------------------------------------*/
+.music {
+  background: #dadada url(../img/greyzz.png);
+  border-bottom: 0;
+  p { text-align: center; }
+  h2 { margin: 0 0 20px; }
+}
+
+
+
+/* FOOTER STYLES
+-------------------------------------------------------------------------------*/
+footer {
+  padding: 30px 0;
+
+  p {
+    clear: both;
+    color: #eee;
+    font-size: 15px;
+    padding: 50px 0 0;
+    text-align: center;
+  }
+}
+
+footer.bottom {
+  padding: 50px 0 100px;
+}
+
+
+/* MEDIA QUERIES
+-------------------------------------------------------------------------------*/
+@media screen and (max-width: 1050px) {
+  
+  h1 {
+    font-size: 80px;
+    line-height: 80px;
+  }
+
+  h2 {
+    font-size: 25px;
+    line-height: 25px;
+    letter-spacing: -1.5px;
+  }
+
+  .wrapper { width: 95%; }
+
+  .main-header {
+    .title-and-photo {
+      .main-title { 
+        margin: 0;
+        h2 { margin: 0 0 5px; }
+      }
+    }
+  }
+
+  .main-photo {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    right: 6%;
+
+    .hover-photo { height: 200px; }
+
+    .ghostbusters { background-position: -80px top; }
+    .terminator-2 { background-position: -85px top; }
+    .top-gun { background-position: -270px top; }
+    .indiana-jones { background-position: -120px top; }
+    .die-hard { background-position: -70px top; }
+  }
+
+  .about {
+    .about-text {
+      float: none;
+      width: auto;
+    }
+    .about-photo { display: none; }
+  }
+
+  .work-content {
+  
+    article {
+      border-top: 1px dotted #ccc;
+      padding: 110px 0;
+
+      .description {
+        float: none;
+        width: auto;
+      }
+
+      a.image-link {
+        display: none;
+      }
+
+      a.view-site {
+        display: block;
+        margin: 10px auto 15px;
+        text-align: center;
+        width: 200px;
+      }
+
+    }
+
+  }
+
+  footer { padding: 20px 0; }
+
+}
+
+
+
+@media screen and (max-width: 860px) {
+
+  .main-header {
+    padding: 105px 0 10px;
+
+    .clearfix { margin: 0 0 20px; }
+    
+    .intro { 
+      p { padding: 0; } 
+    }   
+
+    .title-and-photo {
+      .main-title {
+        float: none;
+        margin: 0;
+        width: auto;
+        h2 { margin: 0 0 10px; }
+        h3 { margin: 0 0 15px; }
+      }
+      .main-photo {
+        float: none;    
+        margin: 0 auto;
+        position: static;
+      }
+    }
+
+    footer.clearfix { margin: 0 0 30px; }
+  }
+
+}
+
+
+
+@media screen and (max-width: 730px) {
+
+  .work {    
+    .worklist {
+      li {
+        width: 48%;
+        margin: 0 4% 20px 0;
+      }
+      li:nth-child(2n) { margin-right: 0 !important; }
+      li:nth-child(3n) { margin: 0 4% 20px 0; }
+    }
+  }
+
+}
+
+
+
+@media screen and (max-width: 640px) {
+
+  .nav-container {
+    background: #444;
+    height: 40px;
+
+    h2 { display: none; }
+
+    ul {
+      background: #333;
+      display: none;
+      float: none;
+      position: fixed;
+      top: 40px;
+      width: 100%;
+
+      li { 
+        border-bottom: 1px solid #666;
+        float: none;
+        margin: 0;
+      }
+
+      li:first-child {
+        margin: 0;
+      }
+
+      li:after { 
+        content: "";
+      }
+
+      li a { 
+        color: #fff;
+        float: none;
+        font-weight: bold;
+        line-height: normal;
+        margin: 0;
+        padding: 10px 0;
+        text-align: center;
+        text-transform: uppercase;
+        width: auto;
+      }
+
+        li a:hover { text-decoration: none; }
+
+      li:last-child a { margin: 0; }
+
+      li.back-home a { width: auto; }
+
+    }
+
+    nav.wrapper { width: 100%; }
+
+    .mobile-menu-btn {
+      background: url(../img/icons.png) no-repeat -192px 0;
+      display: block;
+      height: 25px;
+      margin: 5px 0 0 2.5%;
+      text-indent: -9999px;
+      width: 25px;
+    }
+
+  }
+
+  .main-header {
+    padding: 60px 0 10px;
+  }
+
+  .content { padding: 70px 0; }
+
+}
+
+
+
+@media screen and (max-width: 520px) {
+
+  h1 {
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+
+  .main-header {
+    .title-and-photo {
+      .main-title { 
+        h1 {
+          font-size: 60px;
+          line-height: 60px;
+        }
+
+        h2,
+        h3 { display: none; }
+      }
+    }
+  }
+
+  .mobile-hidden { display: inline; }
+
+  .social {
+    width: 138px;
+    li { margin-bottom: 14px; }
+  }
+
+  .work {
+    
+    .worklist {
+
+      li {
+        width: 100%;
+        margin: 0 0 15px 0;
+      }
+
+      li:nth-child(2n) { margin-right: 0; }
+      li:nth-child(3n) { margin: 0 0 15px 0; }
+
+    }
+
+    blockquote { padding: 0 0 20px; }
+
+  }
+
+}
+
+
+
+@media screen and (max-width: 460px) {
+
+  .main-photo {
+    height: 150px;
+    width: 150px;
+
+    .hover-photo { height: 150px; }
+
+    .ghostbusters { background-position: -60px top; }
+    .terminator-2 { background-position: -65px top; }
+    .top-gun { background-position: -190px top; }
+    .indiana-jones { background-position: -90px top; }
+    .die-hard { background-position: -50px top; }
+  }
+
+}

@@ -1,0 +1,23 @@
+AddDefaultCharset UTF-8
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+Options -Indexes
+ErrorDocument 403 /404/
+ErrorDocument 404 /404/
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^/]+)/$ $1.php
+
+RewriteRule ^work/([a-zA-Z0-9-/]+)/$ /work/$1.php [L]
+RewriteRule ^work/([a-zA-Z0-9-]+)$ /work/$1.php [L]
+RewriteRule ^work/$ /404/ [R=301,L]
+
+# Redirect 301 /work/ /404/ 
+Redirect 301 /index/ /
+Redirect 301 /index /
